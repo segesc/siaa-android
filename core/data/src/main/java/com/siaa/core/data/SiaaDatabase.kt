@@ -15,9 +15,10 @@ import androidx.room.RoomDatabase
         InteractionEntity::class,
         DeviceProfileEntity::class,
         MisconceptionEntity::class,
-        AppMetaEntity::class
+        AppMetaEntity::class,
+        RuntimeEventEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class SiaaDatabase : RoomDatabase() {
@@ -32,6 +33,9 @@ abstract class SiaaDatabase : RoomDatabase() {
             context.applicationContext,
             SiaaDatabase::class.java,
             "siaa.db"
-        ).build()
+        )
+            .addMigrations(com.siaa.core.data.migration.MIGRATION_1_2)
+            .build()
     }
 }
+

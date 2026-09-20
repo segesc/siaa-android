@@ -39,14 +39,14 @@ data class SessionSummaryRow(
 interface SessionDao {
     @Insert suspend fun insertSession(session: SessionEntity): Long
     @Query("UPDATE sessions SET endedAtEpochMs=:endedAt WHERE id=:id") suspend fun finishSession(id: Long, endedAt: Long)
-    @Insert suspend fun insertInteraction(interaction: InteractionEntity): Long
+    @Insert(onConflict = OnConflictStrategy.ABORT) suspend fun insertInteraction(interaction: InteractionEntity): Long
     @Query("SELECT * FROM interactions ORDER BY timestampEpochMs DESC LIMIT :limit") suspend fun recentInteractions(limit: Int): List<InteractionEntity>
-    @Query("SELECT COUNT(*) FROM interactions") suspend fun interactionCount(): Int
+    @Query("SELECT COUNT(*) FROM interactions WHERE graded = 1") suspend fun interactionCount(): Int
     @Query("""
         SELECT s.id AS id, s.mode AS mode, s.startedAtEpochMs AS startedAtEpochMs, s.endedAtEpochMs AS endedAtEpochMs,
-               COUNT(i.id) AS completedItems,
-               COALESCE(SUM(CASE WHEN i.correct = 1 THEN 1 ELSE 0 END), 0) AS correctItems,
-               AVG(i.latencyMs) AS meanLatencyMs
+               COALESCE(SUM(CASE WHEN i.graded = 1 THEN 1 ELSE 0 END), 0) AS completedItems,
+               COALESCE(SUM(CASE WHEN i.graded = 1 AND i.correct = 1 THEN 1 ELSE 0 END), 0) AS correctItems,
+               AVG(CASE WHEN i.graded = 1 THEN i.latencyMs ELSE NULL END) AS meanLatencyMs
         FROM sessions s
         LEFT JOIN interactions i ON i.sessionId = s.id
         GROUP BY s.id
@@ -54,7 +54,11 @@ interface SessionDao {
         LIMIT :limit
     """)
     suspend fun recentSessions(limit: Int): List<SessionSummaryRow>
+
+    @Insert suspend fun insertRuntimeEvent(event: RuntimeEventEntity): Long
+    @Query("SELECT * FROM runtime_events ORDER BY timestampEpochMs DESC LIMIT :limit") suspend fun recentRuntimeEvents(limit: Int): List<RuntimeEventEntity>
 }
+
 
 @Dao
 interface DeviceDao {

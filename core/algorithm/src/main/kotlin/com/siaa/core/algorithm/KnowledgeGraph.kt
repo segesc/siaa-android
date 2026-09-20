@@ -23,13 +23,26 @@ class KnowledgeGraphEngine(
         return (weighted.sum() / totalWeight).coerceIn(0.0, 1.0)
     }
 
-    fun isUnlocked(kcId: String, states: Map<String, LearnerKcState>, threshold: Double = 0.68): Boolean {
+    fun isUnlocked(
+        kcId: String,
+        states: Map<String, LearnerKcState>,
+        threshold: Double = 0.68,
+        nowEpochMs: Long? = null,
+        useCheckpoints: Boolean = false
+    ): Boolean {
         val prereqs = incoming[kcId].orEmpty()
         if (prereqs.isEmpty()) return true
         return prereqs.all { edge ->
-            if (!edge.hardPrerequisite) true else (states[edge.fromId]?.mastery ?: 0.0) >= threshold
+            if (!edge.hardPrerequisite) return@all true
+            val prereqState = states[edge.fromId] ?: return@all false
+            if (useCheckpoints && nowEpochMs != null) {
+                MasteryCheckpointEvaluator.evaluate(prereqState, nowEpochMs).passed
+            } else {
+                prereqState.mastery >= threshold
+            }
         }
     }
+
 
     fun outerFringe(states: Map<String, LearnerKcState>, masteryThreshold: Double = 0.82): Set<String> = ids
         .filter { id -> (states[id]?.mastery ?: 0.0) < masteryThreshold && isUnlocked(id, states) }

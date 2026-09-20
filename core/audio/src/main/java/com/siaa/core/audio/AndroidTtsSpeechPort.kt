@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import com.siaa.core.runtime.SpeechPort
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.suspendCancellableCoroutine
 import java.util.Locale
@@ -14,7 +16,7 @@ import kotlin.coroutines.resume
 
 class AndroidTtsSpeechPort(context: Context) : SpeechPort, TextToSpeech.OnInitListener {
     private val ready = CompletableDeferred<Unit>()
-    private val pending = ConcurrentHashMap<String, kotlin.coroutines.Continuation<Unit>>()
+    private val pending = ConcurrentHashMap<String, CancellableContinuation<Unit>>()
     private val tts = TextToSpeech(context.applicationContext, this)
 
     init {
@@ -22,12 +24,14 @@ class AndroidTtsSpeechPort(context: Context) : SpeechPort, TextToSpeech.OnInitLi
             override fun onStart(utteranceId: String?) = Unit
             override fun onDone(utteranceId: String?) {
                 utteranceId ?: return
-                pending.remove(utteranceId)?.resume(Unit)
+                val cont = pending.remove(utteranceId)
+                if (cont != null && cont.isActive) cont.resume(Unit)
             }
             @Deprecated("Deprecated in Java")
             override fun onError(utteranceId: String?) {
                 utteranceId ?: return
-                pending.remove(utteranceId)?.resume(Unit)
+                val cont = pending.remove(utteranceId)
+                if (cont != null && cont.isActive) cont.resume(Unit)
             }
             override fun onError(utteranceId: String?, errorCode: Int) = onError(utteranceId)
         })
@@ -66,9 +70,13 @@ class AndroidTtsSpeechPort(context: Context) : SpeechPort, TextToSpeech.OnInitLi
 
     override fun stop() {
         tts.stop()
-        val values = pending.values.toList()
+        val toCancel = pending.values.toList()
         pending.clear()
-        values.forEach { it.resume(Unit) }
+        toCancel.forEach { cont ->
+            if (cont.isActive) {
+                cont.cancel(CancellationException("TTS stopped"))
+            }
+        }
     }
 
     override fun shutdown() {
@@ -76,3 +84,4 @@ class AndroidTtsSpeechPort(context: Context) : SpeechPort, TextToSpeech.OnInitLi
         tts.shutdown()
     }
 }
+

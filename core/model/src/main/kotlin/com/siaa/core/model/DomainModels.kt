@@ -20,7 +20,7 @@ enum class ExerciseType {
     PRON_DISCRIMINATION
 }
 
-enum class EarconKind { CORRECT, INCORRECT, REGISTERED, NEW_PROMPT, WARNING }
+enum class EarconKind { CORRECT, INCORRECT, REGISTERED, NEW_PROMPT, WARNING, ATTENTION }
 
 enum class ResponseConfidence { CORRECT, UNSURE, WRONG }
 
@@ -57,8 +57,18 @@ data class LearnerKcState(
     val consecutiveSuccess: Int = 0,
     val consecutiveFailure: Int = 0,
     val totalAttempts: Int = 0,
-    val totalCorrect: Int = 0
+    val totalCorrect: Int = 0,
+    val exposureCount: Int = 0,
+    val lastExposedAtEpochMs: Long? = null
 )
+
+
+enum class InteractionKind {
+    GRADED_RESPONSE,
+    TIMEOUT,
+    TEACH_EXPOSURE,
+    SKIPPED
+}
 
 data class ExerciseDefinition(
     val id: String,
@@ -74,16 +84,20 @@ data class ExerciseDefinition(
     val explanationEs: String = "",
     val spellTarget: String = "",
     val estimatedSeconds: Int = 20,
-    val tags: Set<String> = emptySet()
+    val tags: Set<String> = emptySet(),
+    val misconceptionIds: List<String> = emptyList()
 )
 
 data class InteractionRecord(
     val id: Long = 0L,
     val sessionId: Long,
+    val turnId: Long = 0L,
     val exerciseId: String,
     val timestampEpochMs: Long,
     val response: String,
     val correct: Boolean,
+    val graded: Boolean = true,
+    val kind: InteractionKind = InteractionKind.GRADED_RESPONSE,
     val confidence: ResponseConfidence? = null,
     val latencyMs: Long? = null,
     val hintDepth: Int = 0,
@@ -116,11 +130,66 @@ data class SessionSummary(
 data class DeviceProfile(
     val id: Long = 0L,
     val name: String,
+    val primaryKeyCode: Int? = null,
+    val secondaryKeyCode: Int? = null,
+    val backKeyCode: Int? = null,
+    val stopKeyCode: Int? = null,
     val playPauseAvailable: Boolean = true,
     val nextAvailable: Boolean = true,
     val previousAvailable: Boolean = true,
     val lastSeenAtEpochMs: Long = 0L
 )
+
+data class SessionCapabilities(
+    val hasPrimary: Boolean = true,
+    val hasSecondary: Boolean = true,
+    val hasBack: Boolean = true
+) {
+    val supportsBinary: Boolean get() = hasPrimary && hasSecondary
+    val supportsThreeWay: Boolean get() = hasPrimary && hasSecondary && hasBack
+
+    fun canPresent(type: ExerciseType): Boolean = when (type) {
+        ExerciseType.TEACH -> true
+        ExerciseType.SELF_ASSESS -> supportsThreeWay
+        else -> supportsBinary
+    }
+}
+
+enum class RuntimeEventType {
+    SESSION_STARTED,
+    EXERCISE_SELECTED,
+    PROMPT_STARTED,
+    PROMPT_FINISHED,
+    MEDIA_COMMAND_RECEIVED,
+    COMMAND_RECEIVED,
+    STATE_TRANSITION,
+    ANSWER_ACCEPTED,
+    ANSWER_REJECTED_DUPLICATE,
+    HELP_REQUESTED,
+    TIMEOUT,
+    PAUSED,
+    RESUMED,
+    ROUTE_LOST,
+    FEEDBACK,
+    TURN_COMMITTED,
+    SESSION_STOPPED,
+    ERROR
+}
+
+data class RuntimeEvent(
+    val id: Long = 0L,
+    val sessionId: Long,
+    val turnId: Long,
+    val timestampEpochMs: Long,
+    val eventType: RuntimeEventType,
+    val stateBefore: String,
+    val stateAfter: String,
+    val exerciseId: String? = null,
+    val runtimeCommand: String? = null,
+    val mediaKeyCode: Int? = null,
+    val payload: String? = null
+)
+
 
 data class Misconception(
     val id: String,

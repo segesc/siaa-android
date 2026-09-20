@@ -15,7 +15,9 @@ class AndroidEarconPort : EarconPort {
             EarconKind.REGISTERED -> tone.startTone(ToneGenerator.TONE_PROP_BEEP, 90)
             EarconKind.NEW_PROMPT -> tone.startTone(ToneGenerator.TONE_PROP_PROMPT, 70)
             EarconKind.WARNING -> tone.startTone(ToneGenerator.TONE_PROP_NACK, 260)
+            EarconKind.ATTENTION -> tone.startTone(ToneGenerator.TONE_PROP_BEEP2, 120)
         }
+
     }
 
     override fun release() = tone.release()

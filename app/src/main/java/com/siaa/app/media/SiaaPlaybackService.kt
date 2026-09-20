@@ -137,6 +137,13 @@ class SiaaPlaybackService : MediaSessionService() {
     }
 
     override fun onDestroy() {
+        if (runtime.snapshot.value.state !in setOf(
+                com.siaa.core.runtime.LessonState.IDLE,
+                com.siaa.core.runtime.LessonState.SESSION_END,
+                com.siaa.core.runtime.LessonState.ERROR
+            )) {
+            runtime.stop()
+        }
         audioOutputGuard.unregister()
         audioFocus.abandon()
         session?.release()
@@ -145,6 +152,7 @@ class SiaaPlaybackService : MediaSessionService() {
         serviceScope.cancel()
         super.onDestroy()
     }
+
 
     /**
      * Media3 enruta mejor controles externos cuando la sesión tiene un Player en estado activo.

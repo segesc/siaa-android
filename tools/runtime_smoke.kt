@@ -11,12 +11,28 @@ class Repo : LearningRepository {
     )
     var states = mutableMapOf<String,LearnerKcState>()
     val interactions = mutableListOf<InteractionRecord>()
+    val events = mutableListOf<RuntimeEvent>()
     override suspend fun loadSnapshot() = LearningSnapshot(comps, emptyList(), states.values.toList(), exs)
     override suspend fun createSession(mode: SessionMode, nowEpochMs: Long) = 1L
     override suspend fun finishSession(sessionId: Long, nowEpochMs: Long) {}
     override suspend fun recordInteraction(record: InteractionRecord): Long { interactions += record; return interactions.size.toLong() }
     override suspend fun updateLearnerState(state: LearnerKcState) { states[state.kcId]=state }
+    override suspend fun commitTurn(
+        interaction: InteractionRecord,
+        updatedStates: List<LearnerKcState>,
+        misconceptionUpdates: List<Misconception>
+    ): Long {
+        updatedStates.forEach { states[it.kcId] = it }
+        interactions += interaction
+        return interactions.size.toLong()
+    }
+    override suspend fun recordRuntimeEvent(event: RuntimeEvent): Long {
+        events += event
+        return events.size.toLong()
+    }
+    override suspend fun recentRuntimeEvents(limit: Int) = events.asReversed().take(limit)
     override suspend fun recentInteractions(limit: Int) = interactions.asReversed().take(limit)
+
     override suspend fun dashboardStats(nowEpochMs: Long) = DashboardStats(1,0,0,0.0,0.0,interactions.size,"A1")
     override suspend fun saveDeviceProfile(profile: DeviceProfile)=1L
     override suspend fun latestDeviceProfile(): DeviceProfile?=null

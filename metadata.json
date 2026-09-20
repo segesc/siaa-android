@@ -1,0 +1,6 @@
+{
+  "name": "SIAA",
+  "description": "Spaced Iterative Adaptive Acquisition - hands-free earbud language learning system",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

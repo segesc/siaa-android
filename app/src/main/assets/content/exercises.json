@@ -1,0 +1,2677 @@
+[
+  {
+    "id": "T_PRON",
+    "type": "TEACH",
+    "kcIds": [
+      "G_PRON"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.1,
+    "promptEs": "Primero aprenderás los pronombres sujeto.",
+    "stimulusEn": "I. You. He. She. It. We. They.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "I es yo; he, él; she, ella.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_PRON_SHE",
+    "type": "AB",
+    "kcIds": [
+      "G_PRON"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.2,
+    "promptEs": "Escucha. ¿Quién está listo?",
+    "stimulusEn": "She is ready.",
+    "optionA": "he",
+    "optionB": "she",
+    "correctOption": "B",
+    "explanationEs": "She corresponde a ella.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "T_BE",
+    "type": "TEACH",
+    "kcIds": [
+      "G_BE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.18,
+    "promptEs": "Con I usamos am; con he, she e it usamos is; con you, we y they usamos are.",
+    "stimulusEn": "I am ready. She is ready. They are ready.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "BE cambia según el sujeto.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_BE_SHE",
+    "type": "AB",
+    "kcIds": [
+      "G_BE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es correcta?",
+    "stimulusEn": "",
+    "optionA": "She are tired",
+    "optionB": "She is tired",
+    "correctOption": "B",
+    "explanationEs": "Con she usamos is.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "Q_BE_THEY",
+    "type": "AB",
+    "kcIds": [
+      "G_BE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es correcta?",
+    "stimulusEn": "",
+    "optionA": "They is here",
+    "optionB": "They are here",
+    "correctOption": "B",
+    "explanationEs": "Con they usamos are.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "T_PRESENT",
+    "type": "TEACH",
+    "kcIds": [
+      "G_PRESENT_BASE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.22,
+    "promptEs": "El present simple expresa rutinas o hechos.",
+    "stimulusEn": "I work here. They live in Lima.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Con I, you, we y they usamos normalmente el verbo base.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_PRESENT_MEAN",
+    "type": "AB",
+    "kcIds": [
+      "G_PRESENT_BASE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.3,
+    "promptEs": "Escucha y elige el significado más probable.",
+    "stimulusEn": "I work here every day.",
+    "optionA": "rutina",
+    "optionB": "acción necesariamente ahora",
+    "correctOption": "A",
+    "explanationEs": "Every day marca una rutina.",
+    "spellTarget": "",
+    "estimatedSeconds": 20,
+    "tags": []
+  },
+  {
+    "id": "T_3SG",
+    "type": "TEACH",
+    "kcIds": [
+      "G_3SG"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.3,
+    "promptEs": "Con he, she o it, el presente simple afirmativo normalmente añade s al verbo.",
+    "stimulusEn": "I work. She works. I live. He lives.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "La terminación marca tercera persona singular.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_3SG_1",
+    "type": "AB",
+    "kcIds": [
+      "G_3SG"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.39,
+    "promptEs": "¿Cuál es correcta?",
+    "stimulusEn": "",
+    "optionA": "She work here",
+    "optionB": "She works here",
+    "correctOption": "B",
+    "explanationEs": "Con she: works.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "Q_3SG_2",
+    "type": "AB",
+    "kcIds": [
+      "G_3SG"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.42,
+    "promptEs": "¿Cuál es correcta?",
+    "stimulusEn": "",
+    "optionA": "He live in Lima",
+    "optionB": "He lives in Lima",
+    "correctOption": "B",
+    "explanationEs": "Con he: lives.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "Q_3SG_3",
+    "type": "AB",
+    "kcIds": [
+      "G_3SG"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.44999999999999996,
+    "promptEs": "¿Cuál es correcta?",
+    "stimulusEn": "",
+    "optionA": "My brother work here",
+    "optionB": "My brother works here",
+    "correctOption": "B",
+    "explanationEs": "My brother es tercera persona singular.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "Q_3SG_4",
+    "type": "AB",
+    "kcIds": [
+      "G_3SG"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál es correcta?",
+    "stimulusEn": "",
+    "optionA": "They works here",
+    "optionB": "They work here",
+    "correctOption": "B",
+    "explanationEs": "Con they no añadimos s.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "SELF_3SG",
+    "type": "SELF_ASSESS",
+    "kcIds": [
+      "G_3SG"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.48,
+    "promptEs": "Construye mentalmente: Ella vive aquí.",
+    "stimulusEn": "",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Respuesta modelo: She lives here.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": []
+  },
+  {
+    "id": "T_DOES",
+    "type": "TEACH",
+    "kcIds": [
+      "G_DOES_Q"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.42,
+    "promptEs": "Para preguntas con he, she o it usamos does y el verbo principal vuelve a su forma base.",
+    "stimulusEn": "She works here. Does she work here?",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "La s queda expresada en does.",
+    "spellTarget": "",
+    "estimatedSeconds": 32,
+    "tags": []
+  },
+  {
+    "id": "Q_DOES_1",
+    "type": "AB",
+    "kcIds": [
+      "G_DOES_Q"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál es correcta?",
+    "stimulusEn": "",
+    "optionA": "Does she works here?",
+    "optionB": "Does she work here?",
+    "correctOption": "B",
+    "explanationEs": "Después de does usamos verbo base.",
+    "spellTarget": "",
+    "estimatedSeconds": 20,
+    "tags": []
+  },
+  {
+    "id": "Q_DOES_2",
+    "type": "AB",
+    "kcIds": [
+      "G_DOES_Q"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.52,
+    "promptEs": "Convierte He lives here en pregunta.",
+    "stimulusEn": "",
+    "optionA": "Does he lives here?",
+    "optionB": "Does he live here?",
+    "correctOption": "B",
+    "explanationEs": "Does + he + live.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": []
+  },
+  {
+    "id": "T_CONT",
+    "type": "TEACH",
+    "kcIds": [
+      "G_PRESENT_CONT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.4,
+    "promptEs": "El present continuous usa BE más verbo ing.",
+    "stimulusEn": "She is working now.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Describe una acción en progreso.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_CONT",
+    "type": "AB",
+    "kcIds": [
+      "G_PRESENT_CONT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál expresa una acción ahora?",
+    "stimulusEn": "",
+    "optionA": "She works every day",
+    "optionB": "She is working now",
+    "correctOption": "B",
+    "explanationEs": "Now favorece present continuous.",
+    "spellTarget": "",
+    "estimatedSeconds": 20,
+    "tags": []
+  },
+  {
+    "id": "T_PAST",
+    "type": "TEACH",
+    "kcIds": [
+      "G_PAST_SIMPLE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.5,
+    "promptEs": "El past simple presenta eventos pasados terminados.",
+    "stimulusEn": "She worked yesterday.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Yesterday sitúa el evento en el pasado.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_PAST",
+    "type": "AB",
+    "kcIds": [
+      "G_PAST_SIMPLE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "¿Cuál se refiere al pasado?",
+    "stimulusEn": "",
+    "optionA": "She works today",
+    "optionB": "She worked yesterday",
+    "correctOption": "B",
+    "explanationEs": "Worked + yesterday es pasado.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "Q_CAN",
+    "type": "AB",
+    "kcIds": [
+      "G_CAN"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.42,
+    "promptEs": "Después de can usamos el verbo base.",
+    "stimulusEn": "",
+    "optionA": "She can works",
+    "optionB": "She can work",
+    "correctOption": "B",
+    "explanationEs": "Can no lleva s en el verbo principal.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "Q_WANT",
+    "type": "AB",
+    "kcIds": [
+      "G_WANT_TO"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.45,
+    "promptEs": "¿Cuál expresa quiero aprender?",
+    "stimulusEn": "",
+    "optionA": "I want learn",
+    "optionB": "I want to learn",
+    "correctOption": "B",
+    "explanationEs": "Want suele ir con to + verbo.",
+    "spellTarget": "",
+    "estimatedSeconds": 20,
+    "tags": []
+  },
+  {
+    "id": "T_V_00",
+    "type": "TEACH",
+    "kcIds": [
+      "V_WORK"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. work. Significa trabajar.",
+    "stimulusEn": "work",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: work.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_00",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_WORK"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa work?",
+    "stimulusEn": "work",
+    "optionA": "trabajar",
+    "optionB": "querer",
+    "correctOption": "A",
+    "explanationEs": "work significa trabajar.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_01",
+    "type": "TEACH",
+    "kcIds": [
+      "V_LIVE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. live. Significa vivir.",
+    "stimulusEn": "live",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: live.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_01",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_LIVE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa live?",
+    "stimulusEn": "live",
+    "optionA": "vivir",
+    "optionB": "necesitar",
+    "correctOption": "A",
+    "explanationEs": "live significa vivir.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_02",
+    "type": "TEACH",
+    "kcIds": [
+      "V_EAT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. eat. Significa comer.",
+    "stimulusEn": "eat",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: eat.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_02",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_EAT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa eat?",
+    "stimulusEn": "eat",
+    "optionA": "comer",
+    "optionB": "tiempo",
+    "correctOption": "A",
+    "explanationEs": "eat significa comer.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_03",
+    "type": "TEACH",
+    "kcIds": [
+      "V_WANT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. want. Significa querer.",
+    "stimulusEn": "want",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: want.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_03",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_WANT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa want?",
+    "stimulusEn": "want",
+    "optionA": "querer",
+    "optionB": "casa/hogar",
+    "correctOption": "A",
+    "explanationEs": "want significa querer.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_04",
+    "type": "TEACH",
+    "kcIds": [
+      "V_NEED"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. need. Significa necesitar.",
+    "stimulusEn": "need",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: need.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_04",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_NEED"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa need?",
+    "stimulusEn": "need",
+    "optionA": "necesitar",
+    "optionB": "aquí",
+    "correctOption": "A",
+    "explanationEs": "need significa necesitar.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_05",
+    "type": "TEACH",
+    "kcIds": [
+      "V_TIME"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. time. Significa tiempo.",
+    "stimulusEn": "time",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: time.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_05",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_TIME"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa time?",
+    "stimulusEn": "time",
+    "optionA": "tiempo",
+    "optionB": "hoy",
+    "correctOption": "A",
+    "explanationEs": "time significa tiempo.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_06",
+    "type": "TEACH",
+    "kcIds": [
+      "V_HOME"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. home. Significa casa/hogar.",
+    "stimulusEn": "home",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: home.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_06",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_HOME"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa home?",
+    "stimulusEn": "home",
+    "optionA": "casa/hogar",
+    "optionB": "ayer",
+    "correctOption": "A",
+    "explanationEs": "home significa casa/hogar.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_07",
+    "type": "TEACH",
+    "kcIds": [
+      "V_HERE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. here. Significa aquí.",
+    "stimulusEn": "here",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: here.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_07",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_HERE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa here?",
+    "stimulusEn": "here",
+    "optionA": "aquí",
+    "optionB": "siempre",
+    "correctOption": "A",
+    "explanationEs": "here significa aquí.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_08",
+    "type": "TEACH",
+    "kcIds": [
+      "V_TODAY"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. today. Significa hoy.",
+    "stimulusEn": "today",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: today.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_08",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_TODAY"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa today?",
+    "stimulusEn": "today",
+    "optionA": "hoy",
+    "optionB": "normalmente",
+    "correctOption": "A",
+    "explanationEs": "today significa hoy.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_09",
+    "type": "TEACH",
+    "kcIds": [
+      "V_YESTERDAY"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. yesterday. Significa ayer.",
+    "stimulusEn": "yesterday",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: yesterday.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_09",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_YESTERDAY"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa yesterday?",
+    "stimulusEn": "yesterday",
+    "optionA": "ayer",
+    "optionB": "nunca",
+    "correctOption": "A",
+    "explanationEs": "yesterday significa ayer.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_10",
+    "type": "TEACH",
+    "kcIds": [
+      "V_ALWAYS"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. always. Significa siempre.",
+    "stimulusEn": "always",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: always.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_10",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_ALWAYS"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa always?",
+    "stimulusEn": "always",
+    "optionA": "siempre",
+    "optionB": "porque",
+    "correctOption": "A",
+    "explanationEs": "always significa siempre.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_11",
+    "type": "TEACH",
+    "kcIds": [
+      "V_USUALLY"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. usually. Significa normalmente.",
+    "stimulusEn": "usually",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: usually.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_11",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_USUALLY"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa usually?",
+    "stimulusEn": "usually",
+    "optionA": "normalmente",
+    "optionB": "antes",
+    "correctOption": "A",
+    "explanationEs": "usually significa normalmente.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_12",
+    "type": "TEACH",
+    "kcIds": [
+      "V_NEVER"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. never. Significa nunca.",
+    "stimulusEn": "never",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: never.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_12",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_NEVER"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa never?",
+    "stimulusEn": "never",
+    "optionA": "nunca",
+    "optionB": "suficiente",
+    "correctOption": "A",
+    "explanationEs": "never significa nunca.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_13",
+    "type": "TEACH",
+    "kcIds": [
+      "V_BECAUSE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. because. Significa porque.",
+    "stimulusEn": "because",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: because.",
+    "spellTarget": "because",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_13",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_BECAUSE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa because?",
+    "stimulusEn": "because",
+    "optionA": "porque",
+    "optionB": "a través de",
+    "correctOption": "A",
+    "explanationEs": "because significa porque.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_13",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_BECAUSE",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a because?",
+    "stimulusEn": "because",
+    "optionA": "B E C A U S E",
+    "optionB": "B E C A U E",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es because.",
+    "spellTarget": "because",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_13",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_BECAUSE",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "Escucha because y forma mentalmente su deletreo.",
+    "stimulusEn": "because",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: B - E - C - A - U - S - E.",
+    "spellTarget": "because",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_14",
+    "type": "TEACH",
+    "kcIds": [
+      "V_BEFORE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. before. Significa antes.",
+    "stimulusEn": "before",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: before.",
+    "spellTarget": "before",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_14",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_BEFORE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa before?",
+    "stimulusEn": "before",
+    "optionA": "antes",
+    "optionB": "aunque",
+    "correctOption": "A",
+    "explanationEs": "before significa antes.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_14",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_BEFORE",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a before?",
+    "stimulusEn": "before",
+    "optionA": "B E F O R E",
+    "optionB": "B E F O E",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es before.",
+    "spellTarget": "before",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_14",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_BEFORE",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "Escucha before y forma mentalmente su deletreo.",
+    "stimulusEn": "before",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: B - E - F - O - R - E.",
+    "spellTarget": "before",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_15",
+    "type": "TEACH",
+    "kcIds": [
+      "V_ENOUGH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. enough. Significa suficiente.",
+    "stimulusEn": "enough",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: enough.",
+    "spellTarget": "enough",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_15",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_ENOUGH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa enough?",
+    "stimulusEn": "enough",
+    "optionA": "suficiente",
+    "optionB": "pensó / pensamiento",
+    "correctOption": "A",
+    "explanationEs": "enough significa suficiente.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_15",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_ENOUGH",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a enough?",
+    "stimulusEn": "enough",
+    "optionA": "E N O U G H",
+    "optionB": "E N O U H",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es enough.",
+    "spellTarget": "enough",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_15",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_ENOUGH",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "Escucha enough y forma mentalmente su deletreo.",
+    "stimulusEn": "enough",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: E - N - O - U - G - H.",
+    "spellTarget": "enough",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_16",
+    "type": "TEACH",
+    "kcIds": [
+      "V_THROUGH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. through. Significa a través de.",
+    "stimulusEn": "through",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: through.",
+    "spellTarget": "through",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_16",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_THROUGH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa through?",
+    "stimulusEn": "through",
+    "optionA": "a través de",
+    "optionB": "correcto / derecha",
+    "correctOption": "A",
+    "explanationEs": "through significa a través de.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_16",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_THROUGH",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a through?",
+    "stimulusEn": "through",
+    "optionA": "T H R O U G H",
+    "optionB": "T H R O U H",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es through.",
+    "spellTarget": "through",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_16",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_THROUGH",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "Escucha through y forma mentalmente su deletreo.",
+    "stimulusEn": "through",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: T - H - R - O - U - G - H.",
+    "spellTarget": "through",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_17",
+    "type": "TEACH",
+    "kcIds": [
+      "V_ALTHOUGH"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. although. Significa aunque.",
+    "stimulusEn": "although",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: although.",
+    "spellTarget": "although",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_17",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_ALTHOUGH"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa although?",
+    "stimulusEn": "although",
+    "optionA": "aunque",
+    "optionB": "medio ambiente",
+    "correctOption": "A",
+    "explanationEs": "although significa aunque.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_17",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_ALTHOUGH",
+      "O_ALPHABET"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a although?",
+    "stimulusEn": "although",
+    "optionA": "A L T H O U G H",
+    "optionB": "A L T H O U H",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es although.",
+    "spellTarget": "although",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_17",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_ALTHOUGH",
+      "O_ALPHABET"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.55,
+    "promptEs": "Escucha although y forma mentalmente su deletreo.",
+    "stimulusEn": "although",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: A - L - T - H - O - U - G - H.",
+    "spellTarget": "although",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_18",
+    "type": "TEACH",
+    "kcIds": [
+      "V_THOUGHT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. thought. Significa pensó / pensamiento.",
+    "stimulusEn": "thought",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: thought.",
+    "spellTarget": "thought",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_18",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_THOUGHT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa thought?",
+    "stimulusEn": "thought",
+    "optionA": "pensó / pensamiento",
+    "optionB": "informe",
+    "correctOption": "A",
+    "explanationEs": "thought significa pensó / pensamiento.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_18",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_THOUGHT",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a thought?",
+    "stimulusEn": "thought",
+    "optionA": "T H O U G H T",
+    "optionB": "T H O U G T",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es thought.",
+    "spellTarget": "thought",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_18",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_THOUGHT",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "Escucha thought y forma mentalmente su deletreo.",
+    "stimulusEn": "thought",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: T - H - O - U - G - H - T.",
+    "spellTarget": "thought",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_19",
+    "type": "TEACH",
+    "kcIds": [
+      "V_RIGHT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. right. Significa correcto / derecha.",
+    "stimulusEn": "right",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: right.",
+    "spellTarget": "right",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_19",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_RIGHT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa right?",
+    "stimulusEn": "right",
+    "optionA": "correcto / derecha",
+    "optionB": "monitoreo",
+    "correctOption": "A",
+    "explanationEs": "right significa correcto / derecha.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_19",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_RIGHT",
+      "O_ALPHABET"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a right?",
+    "stimulusEn": "right",
+    "optionA": "R I G H T",
+    "optionB": "R I G T",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es right.",
+    "spellTarget": "right",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_19",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_RIGHT",
+      "O_ALPHABET"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.55,
+    "promptEs": "Escucha right y forma mentalmente su deletreo.",
+    "stimulusEn": "right",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: R - I - G - H - T.",
+    "spellTarget": "right",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_20",
+    "type": "TEACH",
+    "kcIds": [
+      "V_ENVIRONMENT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. environment. Significa medio ambiente.",
+    "stimulusEn": "environment",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: environment.",
+    "spellTarget": "environment",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_20",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_ENVIRONMENT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa environment?",
+    "stimulusEn": "environment",
+    "optionA": "medio ambiente",
+    "optionB": "agua residual",
+    "correctOption": "A",
+    "explanationEs": "environment significa medio ambiente.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_20",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_ENVIRONMENT",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a environment?",
+    "stimulusEn": "environment",
+    "optionA": "E N V I R O N M E N T",
+    "optionB": "E N V I R O N M E T",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es environment.",
+    "spellTarget": "environment",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_20",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_ENVIRONMENT",
+      "O_ALPHABET"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "Escucha environment y forma mentalmente su deletreo.",
+    "stimulusEn": "environment",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: E - N - V - I - R - O - N - M - E - N - T.",
+    "spellTarget": "environment",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_21",
+    "type": "TEACH",
+    "kcIds": [
+      "V_REPORT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. report. Significa informe.",
+    "stimulusEn": "report",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: report.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_21",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_REPORT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa report?",
+    "stimulusEn": "report",
+    "optionA": "informe",
+    "optionB": "muestra",
+    "correctOption": "A",
+    "explanationEs": "report significa informe.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_22",
+    "type": "TEACH",
+    "kcIds": [
+      "V_MONITORING"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. monitoring. Significa monitoreo.",
+    "stimulusEn": "monitoring",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: monitoring.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_22",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_MONITORING"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa monitoring?",
+    "stimulusEn": "monitoring",
+    "optionA": "monitoreo",
+    "optionB": "resultado",
+    "correctOption": "A",
+    "explanationEs": "monitoring significa monitoreo.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_23",
+    "type": "TEACH",
+    "kcIds": [
+      "V_WASTEWATER"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. wastewater. Significa agua residual.",
+    "stimulusEn": "wastewater",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: wastewater.",
+    "spellTarget": "wastewater",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_23",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_WASTEWATER"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa wastewater?",
+    "stimulusEn": "wastewater",
+    "optionA": "agua residual",
+    "optionB": "límite",
+    "correctOption": "A",
+    "explanationEs": "wastewater significa agua residual.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "SP_V_23",
+    "type": "SPELLING_AB",
+    "kcIds": [
+      "V_WASTEWATER",
+      "O_ALPHABET"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.48,
+    "promptEs": "¿Cuál deletreo corresponde a wastewater?",
+    "stimulusEn": "wastewater",
+    "optionA": "W A S T E W A T E R",
+    "optionB": "W A S T E W A T R",
+    "correctOption": "A",
+    "explanationEs": "La forma escrita es wastewater.",
+    "spellTarget": "wastewater",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling"
+    ]
+  },
+  {
+    "id": "SELF_SP_23",
+    "type": "SPELL_FROM_AUDIO",
+    "kcIds": [
+      "V_WASTEWATER",
+      "O_ALPHABET"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.55,
+    "promptEs": "Escucha wastewater y forma mentalmente su deletreo.",
+    "stimulusEn": "wastewater",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Se escribe: W - A - S - T - E - W - A - T - E - R.",
+    "spellTarget": "wastewater",
+    "estimatedSeconds": 25,
+    "tags": [
+      "spelling",
+      "recall"
+    ]
+  },
+  {
+    "id": "T_V_24",
+    "type": "TEACH",
+    "kcIds": [
+      "V_SAMPLE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. sample. Significa muestra.",
+    "stimulusEn": "sample",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: sample.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_24",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_SAMPLE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa sample?",
+    "stimulusEn": "sample",
+    "optionA": "muestra",
+    "optionB": "proyecto",
+    "correctOption": "A",
+    "explanationEs": "sample significa muestra.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_25",
+    "type": "TEACH",
+    "kcIds": [
+      "V_RESULT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. result. Significa resultado.",
+    "stimulusEn": "result",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: result.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_25",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_RESULT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa result?",
+    "stimulusEn": "result",
+    "optionA": "resultado",
+    "optionB": "reunión",
+    "correctOption": "A",
+    "explanationEs": "result significa resultado.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_26",
+    "type": "TEACH",
+    "kcIds": [
+      "V_LIMIT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. limit. Significa límite.",
+    "stimulusEn": "limit",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: limit.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_26",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_LIMIT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa limit?",
+    "stimulusEn": "limit",
+    "optionA": "límite",
+    "optionB": "mejorar",
+    "correctOption": "A",
+    "explanationEs": "limit significa límite.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_27",
+    "type": "TEACH",
+    "kcIds": [
+      "V_PROJECT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. project. Significa proyecto.",
+    "stimulusEn": "project",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: project.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_27",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_PROJECT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa project?",
+    "stimulusEn": "project",
+    "optionA": "proyecto",
+    "optionB": "trabajar",
+    "correctOption": "A",
+    "explanationEs": "project significa proyecto.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_28",
+    "type": "TEACH",
+    "kcIds": [
+      "V_MEETING"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. meeting. Significa reunión.",
+    "stimulusEn": "meeting",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: meeting.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_28",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_MEETING"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa meeting?",
+    "stimulusEn": "meeting",
+    "optionA": "reunión",
+    "optionB": "vivir",
+    "correctOption": "A",
+    "explanationEs": "meeting significa reunión.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_V_29",
+    "type": "TEACH",
+    "kcIds": [
+      "V_IMPROVE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.25,
+    "promptEs": "Nueva palabra. improve. Significa mejorar.",
+    "stimulusEn": "improve",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Escucha de nuevo: improve.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "vocab"
+    ]
+  },
+  {
+    "id": "M_V_29",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "V_IMPROVE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "¿Qué significa improve?",
+    "stimulusEn": "improve",
+    "optionA": "mejorar",
+    "optionB": "comer",
+    "correctOption": "A",
+    "explanationEs": "improve significa mejorar.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "vocab",
+      "meaning"
+    ]
+  },
+  {
+    "id": "T_ALPHABET",
+    "type": "TEACH",
+    "kcIds": [
+      "O_ALPHABET"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.12,
+    "promptEs": "El deletreo en inglés usa nombres de letras distintos al español.",
+    "stimulusEn": "A. B. C. D. E. F. G. H. I. J. K. L. M. N. O. P. Q. R. S. T. U. V. W. X. Y. Z.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Los aprenderemos progresivamente.",
+    "spellTarget": "",
+    "estimatedSeconds": 35,
+    "tags": []
+  },
+  {
+    "id": "LQ_A",
+    "type": "AB",
+    "kcIds": [
+      "L_A"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra A?",
+    "stimulusEn": "",
+    "optionA": "ay",
+    "optionB": "bee",
+    "correctOption": "A",
+    "explanationEs": "A se nombra ay.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_E",
+    "type": "AB",
+    "kcIds": [
+      "L_E"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra E?",
+    "stimulusEn": "",
+    "optionA": "ee",
+    "optionB": "ef",
+    "correctOption": "A",
+    "explanationEs": "E se nombra ee.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_I",
+    "type": "AB",
+    "kcIds": [
+      "L_I"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra I?",
+    "stimulusEn": "",
+    "optionA": "eye",
+    "optionB": "jay",
+    "correctOption": "A",
+    "explanationEs": "I se nombra eye.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_O",
+    "type": "AB",
+    "kcIds": [
+      "L_O"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra O?",
+    "stimulusEn": "",
+    "optionA": "oh",
+    "optionB": "kay",
+    "correctOption": "A",
+    "explanationEs": "O se nombra oh.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_U",
+    "type": "AB",
+    "kcIds": [
+      "L_U"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra U?",
+    "stimulusEn": "",
+    "optionA": "you",
+    "optionB": "el",
+    "correctOption": "A",
+    "explanationEs": "U se nombra you.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_G",
+    "type": "AB",
+    "kcIds": [
+      "L_G"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra G?",
+    "stimulusEn": "",
+    "optionA": "gee",
+    "optionB": "em",
+    "correctOption": "A",
+    "explanationEs": "G se nombra gee.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_H",
+    "type": "AB",
+    "kcIds": [
+      "L_H"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra H?",
+    "stimulusEn": "",
+    "optionA": "aitch",
+    "optionB": "en",
+    "correctOption": "A",
+    "explanationEs": "H se nombra aitch.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_R",
+    "type": "AB",
+    "kcIds": [
+      "L_R"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra R?",
+    "stimulusEn": "",
+    "optionA": "ar",
+    "optionB": "pee",
+    "correctOption": "A",
+    "explanationEs": "R se nombra ar.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_W",
+    "type": "AB",
+    "kcIds": [
+      "L_W"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra W?",
+    "stimulusEn": "",
+    "optionA": "double u",
+    "optionB": "cue",
+    "correctOption": "A",
+    "explanationEs": "W se nombra double u.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "LQ_Y",
+    "type": "AB",
+    "kcIds": [
+      "L_Y"
+    ],
+    "cefr": "Pre-A1",
+    "difficulty": 0.28,
+    "promptEs": "¿Cuál es el nombre inglés de la letra Y?",
+    "stimulusEn": "",
+    "optionA": "why",
+    "optionB": "ess",
+    "correctOption": "A",
+    "explanationEs": "Y se nombra why.",
+    "spellTarget": "",
+    "estimatedSeconds": 16,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "T_OUGH",
+    "type": "TEACH",
+    "kcIds": [
+      "O_OUGH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.45,
+    "promptEs": "La secuencia O U G H no tiene una sola pronunciación.",
+    "stimulusEn": "enough. through. thought. although.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Aprende la relación entre palabra escrita y sonido.",
+    "spellTarget": "",
+    "estimatedSeconds": 32,
+    "tags": []
+  },
+  {
+    "id": "Q_OUGH",
+    "type": "AB",
+    "kcIds": [
+      "O_OUGH",
+      "V_ENOUGH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "¿Cuál palabra se deletrea E N O U G H?",
+    "stimulusEn": "",
+    "optionA": "enough",
+    "optionB": "through",
+    "correctOption": "A",
+    "explanationEs": "Enough termina en ough.",
+    "spellTarget": "",
+    "estimatedSeconds": 20,
+    "tags": []
+  },
+  {
+    "id": "T_IGH",
+    "type": "TEACH",
+    "kcIds": [
+      "O_IGH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.42,
+    "promptEs": "El patrón I G H aparece en palabras como right y night.",
+    "stimulusEn": "right. night. light.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "En estas palabras comparte un patrón sonoro.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_IGH",
+    "type": "AB",
+    "kcIds": [
+      "O_IGH",
+      "V_RIGHT"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.5,
+    "promptEs": "¿Cuál comparte el patrón de right?",
+    "stimulusEn": "",
+    "optionA": "night",
+    "optionB": "made",
+    "correctOption": "A",
+    "explanationEs": "Right y night comparten igh.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "T_LISTEN_SEG",
+    "type": "TEACH",
+    "kcIds": [
+      "LS_WORD_BOUND"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.3,
+    "promptEs": "En habla continua las palabras se unen.",
+    "stimulusEn": "What have you been doing?",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Busca fronteras de palabra.",
+    "spellTarget": "",
+    "estimatedSeconds": 28,
+    "tags": []
+  },
+  {
+    "id": "Q_LISTEN_SEG",
+    "type": "LISTENING_AB",
+    "kcIds": [
+      "LS_WORD_BOUND"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.42,
+    "promptEs": "Escucha y elige qué frase oíste.",
+    "stimulusEn": "What have you been doing?",
+    "optionA": "What have you been doing?",
+    "optionB": "What are you doing?",
+    "correctOption": "A",
+    "explanationEs": "La frase contiene have y been.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": []
+  },
+  {
+    "id": "Q_LISTEN_KEY",
+    "type": "LISTENING_AB",
+    "kcIds": [
+      "LS_KEYWORDS",
+      "V_WORK"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.36,
+    "promptEs": "Escucha y responde: ¿dónde trabaja?",
+    "stimulusEn": "She works at home every Friday.",
+    "optionA": "at home",
+    "optionB": "at school",
+    "correctOption": "A",
+    "explanationEs": "La palabra clave es home.",
+    "spellTarget": "",
+    "estimatedSeconds": 20,
+    "tags": []
+  },
+  {
+    "id": "Q_LISTEN_DETAIL",
+    "type": "LISTENING_AB",
+    "kcIds": [
+      "LS_DETAIL",
+      "V_MEETING"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.58,
+    "promptEs": "Escucha y responde: ¿cuándo es la reunión?",
+    "stimulusEn": "The meeting is on Tuesday at three.",
+    "optionA": "Tuesday at three",
+    "optionB": "Thursday at two",
+    "correctOption": "A",
+    "explanationEs": "El detalle es Tuesday at three.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": []
+  },
+  {
+    "id": "T_SHIP_SHEEP",
+    "type": "TEACH",
+    "kcIds": [
+      "PH_SHORT_LONG_I"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.32,
+    "promptEs": "Escucha dos vocales inglesas diferentes.",
+    "stimulusEn": "ship. sheep.",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "No las reduzcas a una sola vocal española.",
+    "spellTarget": "",
+    "estimatedSeconds": 24,
+    "tags": []
+  },
+  {
+    "id": "Q_SHIP_SHEEP",
+    "type": "PRON_DISCRIMINATION",
+    "kcIds": [
+      "PH_SHORT_LONG_I"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.48,
+    "promptEs": "Escucha y elige cuál fue.",
+    "stimulusEn": "sheep",
+    "optionA": "ship",
+    "optionB": "sheep",
+    "correctOption": "B",
+    "explanationEs": "La palabra fue sheep.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "Q_TH",
+    "type": "PRON_DISCRIMINATION",
+    "kcIds": [
+      "PH_TH"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.55,
+    "promptEs": "Escucha y elige la palabra.",
+    "stimulusEn": "think",
+    "optionA": "sink",
+    "optionB": "think",
+    "correctOption": "B",
+    "explanationEs": "Think comienza con th.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": []
+  },
+  {
+    "id": "T_C_DONT_KNOW",
+    "type": "TEACH",
+    "kcIds": [
+      "C_DONT_KNOW"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "Aprende este bloque como una unidad: I don’t know.",
+    "stimulusEn": "I don’t know",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Significa aproximadamente: no lo sé.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "Q_C_DONT_KNOW",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "C_DONT_KNOW"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.42,
+    "promptEs": "¿Qué significa I don’t know?",
+    "stimulusEn": "I don’t know",
+    "optionA": "no lo sé",
+    "optionB": "una opción diferente",
+    "correctOption": "A",
+    "explanationEs": "I don’t know: no lo sé.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "T_C_NOT_SURE",
+    "type": "TEACH",
+    "kcIds": [
+      "C_NOT_SURE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "Aprende este bloque como una unidad: I’m not sure.",
+    "stimulusEn": "I’m not sure",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Significa aproximadamente: no estoy seguro.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "Q_C_NOT_SURE",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "C_NOT_SURE"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.42,
+    "promptEs": "¿Qué significa I’m not sure?",
+    "stimulusEn": "I’m not sure",
+    "optionA": "no estoy seguro",
+    "optionB": "una opción diferente",
+    "correctOption": "A",
+    "explanationEs": "I’m not sure: no estoy seguro.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "T_C_WANT_TO",
+    "type": "TEACH",
+    "kcIds": [
+      "C_WANT_TO"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.35,
+    "promptEs": "Aprende este bloque como una unidad: I want to.",
+    "stimulusEn": "I want to",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Significa aproximadamente: quiero.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "Q_C_WANT_TO",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "C_WANT_TO"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.42,
+    "promptEs": "¿Qué significa I want to?",
+    "stimulusEn": "I want to",
+    "optionA": "quiero",
+    "optionB": "una opción diferente",
+    "correctOption": "A",
+    "explanationEs": "I want to: quiero.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "T_C_AS_FAR",
+    "type": "TEACH",
+    "kcIds": [
+      "C_AS_FAR"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.35,
+    "promptEs": "Aprende este bloque como una unidad: As far as I know.",
+    "stimulusEn": "As far as I know",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Significa aproximadamente: hasta donde sé.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "Q_C_AS_FAR",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "C_AS_FAR"
+    ],
+    "cefr": "B1",
+    "difficulty": 0.42,
+    "promptEs": "¿Qué significa As far as I know?",
+    "stimulusEn": "As far as I know",
+    "optionA": "hasta donde sé",
+    "optionB": "una opción diferente",
+    "correctOption": "A",
+    "explanationEs": "As far as I know: hasta donde sé.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "T_C_DEPENDS",
+    "type": "TEACH",
+    "kcIds": [
+      "C_DEPENDS"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.35,
+    "promptEs": "Aprende este bloque como una unidad: It depends on.",
+    "stimulusEn": "It depends on",
+    "optionA": "",
+    "optionB": "",
+    "correctOption": "",
+    "explanationEs": "Significa aproximadamente: depende de.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "Q_C_DEPENDS",
+    "type": "MEANING_AB",
+    "kcIds": [
+      "C_DEPENDS"
+    ],
+    "cefr": "A2",
+    "difficulty": 0.42,
+    "promptEs": "¿Qué significa It depends on?",
+    "stimulusEn": "It depends on",
+    "optionA": "depende de",
+    "optionB": "una opción diferente",
+    "correctOption": "A",
+    "explanationEs": "It depends on: depende de.",
+    "spellTarget": "",
+    "estimatedSeconds": 18,
+    "tags": [
+      "chunk"
+    ]
+  },
+  {
+    "id": "MIX_PRESENT_CONT",
+    "type": "AB",
+    "kcIds": [
+      "G_PRESENT_BASE",
+      "G_PRESENT_CONT"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.58,
+    "promptEs": "Elige la frase para una acción ahora mismo.",
+    "stimulusEn": "",
+    "optionA": "She works every day",
+    "optionB": "She is working right now",
+    "correctOption": "B",
+    "explanationEs": "La decisión depende del significado.",
+    "spellTarget": "",
+    "estimatedSeconds": 22,
+    "tags": [
+      "interleaved"
+    ]
+  },
+  {
+    "id": "MIX_DOES_BE",
+    "type": "AB",
+    "kcIds": [
+      "G_DOES_Q",
+      "G_BE"
+    ],
+    "cefr": "A1",
+    "difficulty": 0.62,
+    "promptEs": "¿Cuál pregunta es correcta para saber si ella está cansada?",
+    "stimulusEn": "",
+    "optionA": "Does she tired?",
+    "optionB": "Is she tired?",
+    "correctOption": "B",
+    "explanationEs": "Con tired usamos BE.",
+    "spellTarget": "",
+    "estimatedSeconds": 24,
+    "tags": [
+      "contrast"
+    ]
+  }
+]

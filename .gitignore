@@ -1,0 +1,25 @@
+.gradle/
+.idea/
+local.properties
+**/build/
+*.iml
+.DS_Store
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Entorno local y credenciales
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+keystore.properties
+*.apk
+*.aab
+*.hprof
+__pycache__/
+*.py[cod]
+.vscode/
+Thumbs.db

@@ -1,0 +1,46 @@
+{
+  "project": "SIAA",
+  "version": "0.7.0",
+  "generated": "2026-09-20",
+  "platform": "Android",
+  "language": "Kotlin",
+  "ui": "Jetpack Compose",
+  "media": "Jetpack Media3 / MediaSessionService",
+  "database": "Room",
+  "offline_first": true,
+  "modules": [
+    ":app",
+    ":core:model",
+    ":core:algorithm",
+    ":core:runtime",
+    ":core:data",
+    ":core:audio",
+    ":core:content"
+  ],
+  "content_counts": {
+    "kcs": 87,
+    "edges": 197,
+    "static_exercises": 134,
+    "lexemes": 30,
+    "generated_variants_estimate": 156
+  },
+  "algorithm_smoke_tested": true,
+  "runtime_smoke_tested": true,
+  "android_apk_build_tested_in_generation_environment": false,
+  "reason_not_apk_built": "Android SDK is not installed in the generation environment",
+  "features": {
+    "qmatrix_evidence_update": true,
+    "memory_ensemble_online": true,
+    "particle_filter_online": true,
+    "thompson_sampling_restricted": true,
+    "wheel_spinning_remediation": true,
+    "help_ladder": true,
+    "media_anchor_silence": true,
+    "content_pack_versioning": true,
+    "curriculum_map_ui": true,
+    "session_history_ui": true
+  },
+  "content_smoke_tested": true,
+  "masterPdf": "reference/SIAA_documento_maestro_v1_5_android_v0_7.pdf",
+  "status": "implementation-complete-source-hardware-validation-pending"
+}

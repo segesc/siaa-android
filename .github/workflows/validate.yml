@@ -1,0 +1,30 @@
+name: Validación
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validar estructura y contenido
+        run: python -X utf8 scripts/validate_project.py
+      - name: Verificar documento maestro y manifiesto
+        run: python -X utf8 scripts/verify_release.py
+      - name: Auditoría CEFR-J informativa
+        run: python -X utf8 scripts/profile_audit.py > cefrj-audit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cefrj-audit
+          path: cefrj-audit.txt
+          retention-days: 14

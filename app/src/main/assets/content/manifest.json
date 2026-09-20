@@ -1,0 +1,16 @@
+{
+  "id": "siaa-core-es-en",
+  "version": "0.7.0",
+  "l1": "es-PE",
+  "l2": "en-US",
+  "description": "Content pack inicial auditivo/adaptativo. Incluye KCs, prerrequisitos, ejercicios curados y variantes léxicas controladas.",
+  "sources": [
+    "CEFR Companion Volume 2020",
+    "English Grammar Profile / English Profile",
+    "Nation - Learning Vocabulary in Another Language",
+    "Lightbown & Spada - How Languages are Learned",
+    "Vandergrift & Goh - Teaching and Learning Second Language Listening",
+    "Celce-Murcia et al. - Teaching Pronunciation",
+    "Larsen-Freeman & Celce-Murcia - The Grammar Book"
+  ]
+}

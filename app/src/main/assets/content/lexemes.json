@@ -1,0 +1,488 @@
+[
+  {
+    "id": "V_WORK",
+    "lemma": "work",
+    "meaningEs": "trabajar",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "casa",
+    "chunks": [
+      "work here",
+      "work from home",
+      "work on a project"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_LIVE",
+    "lemma": "live",
+    "meaningEs": "vivir",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "comer",
+    "chunks": [
+      "live in Lima",
+      "live with my family"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_EAT",
+    "lemma": "eat",
+    "meaningEs": "comer",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "tiempo",
+    "chunks": [
+      "eat breakfast",
+      "eat at home"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_WANT",
+    "lemma": "want",
+    "meaningEs": "querer",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "ayer",
+    "chunks": [
+      "want to learn",
+      "want to go"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_NEED",
+    "lemma": "need",
+    "meaningEs": "necesitar",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "nunca",
+    "chunks": [
+      "need more time",
+      "need help"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_TIME",
+    "lemma": "time",
+    "meaningEs": "tiempo",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "informe",
+    "chunks": [
+      "enough time",
+      "on time",
+      "free time"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_HOME",
+    "lemma": "home",
+    "meaningEs": "casa/hogar",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "muestra",
+    "chunks": [
+      "at home",
+      "go home",
+      "work from home"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_HERE",
+    "lemma": "here",
+    "meaningEs": "aquí",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "proyecto",
+    "chunks": [
+      "work here",
+      "come here"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_TODAY",
+    "lemma": "today",
+    "meaningEs": "hoy",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "límite",
+    "chunks": [
+      "today morning",
+      "later today"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_YESTERDAY",
+    "lemma": "yesterday",
+    "meaningEs": "ayer",
+    "cefr": "A1",
+    "spellingDifficulty": 0.9,
+    "distractorEs": "hoy",
+    "chunks": [
+      "yesterday morning",
+      "since yesterday"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_ALWAYS",
+    "lemma": "always",
+    "meaningEs": "siempre",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "trabajar",
+    "chunks": [
+      "always works",
+      "almost always"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_USUALLY",
+    "lemma": "usually",
+    "meaningEs": "normalmente",
+    "cefr": "A1",
+    "spellingDifficulty": 0.9,
+    "distractorEs": "resultado",
+    "chunks": [
+      "usually go",
+      "usually works"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_NEVER",
+    "lemma": "never",
+    "meaningEs": "nunca",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "casa",
+    "chunks": [
+      "never again",
+      "almost never"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_BECAUSE",
+    "lemma": "because",
+    "meaningEs": "porque",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "comer",
+    "chunks": [
+      "because of",
+      "because I need"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_BEFORE",
+    "lemma": "before",
+    "meaningEs": "antes",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "tiempo",
+    "chunks": [
+      "before work",
+      "the day before"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_ENOUGH",
+    "lemma": "enough",
+    "meaningEs": "suficiente",
+    "cefr": "A2",
+    "spellingDifficulty": 0.9,
+    "distractorEs": "ayer",
+    "chunks": [
+      "good enough",
+      "enough time",
+      "not enough"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_THROUGH",
+    "lemma": "through",
+    "meaningEs": "a través de",
+    "cefr": "A2",
+    "spellingDifficulty": 0.9,
+    "distractorEs": "nunca",
+    "chunks": [
+      "through the park",
+      "through the door",
+      "go through"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_ALTHOUGH",
+    "lemma": "although",
+    "meaningEs": "aunque",
+    "cefr": "B1",
+    "spellingDifficulty": 0.9,
+    "distractorEs": "informe",
+    "chunks": [
+      "although I was tired",
+      "although it seems"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_THOUGHT",
+    "lemma": "thought",
+    "meaningEs": "pensó / pensamiento",
+    "cefr": "A2",
+    "spellingDifficulty": 0.9,
+    "distractorEs": "muestra",
+    "chunks": [
+      "I thought",
+      "thought about"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_RIGHT",
+    "lemma": "right",
+    "meaningEs": "correcto / derecha",
+    "cefr": "A1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "proyecto",
+    "chunks": [
+      "that is right",
+      "right now",
+      "turn right"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_ENVIRONMENT",
+    "lemma": "environment",
+    "meaningEs": "medio ambiente",
+    "cefr": "A2",
+    "spellingDifficulty": 0.9,
+    "distractorEs": "límite",
+    "chunks": [
+      "the environment",
+      "environmental impact"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_REPORT",
+    "lemma": "report",
+    "meaningEs": "informe",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "hoy",
+    "chunks": [
+      "write a report",
+      "according to the report"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_MONITORING",
+    "lemma": "monitoring",
+    "meaningEs": "monitoreo",
+    "cefr": "B1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "trabajar",
+    "chunks": [
+      "environmental monitoring",
+      "monitoring results"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_WASTEWATER",
+    "lemma": "wastewater",
+    "meaningEs": "agua residual",
+    "cefr": "B1",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "resultado",
+    "chunks": [
+      "wastewater treatment",
+      "wastewater sample"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_SAMPLE",
+    "lemma": "sample",
+    "meaningEs": "muestra",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "casa",
+    "chunks": [
+      "take a sample",
+      "water sample"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_RESULT",
+    "lemma": "result",
+    "meaningEs": "resultado",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "comer",
+    "chunks": [
+      "the result",
+      "monitoring results"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_LIMIT",
+    "lemma": "limit",
+    "meaningEs": "límite",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "tiempo",
+    "chunks": [
+      "permissible limit",
+      "above the limit"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_PROJECT",
+    "lemma": "project",
+    "meaningEs": "proyecto",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "ayer",
+    "chunks": [
+      "work on a project",
+      "environmental project"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_MEETING",
+    "lemma": "meeting",
+    "meaningEs": "reunión",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "nunca",
+    "chunks": [
+      "in a meeting",
+      "schedule a meeting"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  },
+  {
+    "id": "V_IMPROVE",
+    "lemma": "improve",
+    "meaningEs": "mejorar",
+    "cefr": "A2",
+    "spellingDifficulty": 0.4,
+    "distractorEs": "informe",
+    "chunks": [
+      "improve performance",
+      "improve the system"
+    ],
+    "tags": [
+      "seed",
+      "curated"
+    ]
+  }
+]

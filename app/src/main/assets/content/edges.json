@@ -1,0 +1,1184 @@
+[
+  {
+    "fromId": "G_PRON",
+    "toId": "G_BE",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_PRON",
+    "toId": "G_PRESENT_BASE",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_PRESENT_BASE",
+    "toId": "G_3SG",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_3SG",
+    "toId": "G_DOES_Q",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_3SG",
+    "toId": "G_DONT_NEG",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_BE",
+    "toId": "G_PRESENT_CONT",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_PRESENT_BASE",
+    "toId": "G_PAST_SIMPLE",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_BE",
+    "toId": "G_THERE",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_PRESENT_BASE",
+    "toId": "G_WANT_TO",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_PAST_SIMPLE",
+    "toId": "G_PERFECT",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "G_PRESENT_BASE",
+    "toId": "G_COND1",
+    "weight": 1.0,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_A",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_B",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_C",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_D",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_E",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_F",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_G",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_H",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_I",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_J",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_K",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_L",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_M",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_N",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_O",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_P",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_Q",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_R",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_S",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_T",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_U",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_V",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_W",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_X",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_Y",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "O_ALPHABET",
+    "toId": "L_Z",
+    "weight": 0.2,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "LS_WORD_BOUND",
+    "toId": "LS_DETAIL",
+    "weight": 0.8,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "V_WANT",
+    "toId": "C_WANT_TO",
+    "weight": 0.5,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "G_WANT_TO",
+    "toId": "C_WANT_TO",
+    "weight": 0.8,
+    "hardPrerequisite": true
+  },
+  {
+    "fromId": "L_W",
+    "toId": "V_WORK",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_WORK",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_WORK",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_K",
+    "toId": "V_WORK",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_LIVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_LIVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_V",
+    "toId": "V_LIVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_L",
+    "toId": "V_LIVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_EAT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_EAT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_EAT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_W",
+    "toId": "V_WANT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_WANT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_N",
+    "toId": "V_WANT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_WANT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_NEED",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_N",
+    "toId": "V_NEED",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_D",
+    "toId": "V_NEED",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_TIME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_TIME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_TIME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_TIME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_HOME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_HOME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_H",
+    "toId": "V_HOME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_HOME",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_HERE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_HERE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_H",
+    "toId": "V_HERE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_TODAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_Y",
+    "toId": "V_TODAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_TODAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_D",
+    "toId": "V_TODAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_TODAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_YESTERDAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_YESTERDAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_YESTERDAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_Y",
+    "toId": "V_YESTERDAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_D",
+    "toId": "V_YESTERDAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_YESTERDAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_S",
+    "toId": "V_YESTERDAY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_W",
+    "toId": "V_ALWAYS",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_Y",
+    "toId": "V_ALWAYS",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_ALWAYS",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_L",
+    "toId": "V_ALWAYS",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_S",
+    "toId": "V_ALWAYS",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_S",
+    "toId": "V_USUALLY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_Y",
+    "toId": "V_USUALLY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_U",
+    "toId": "V_USUALLY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_USUALLY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_L",
+    "toId": "V_USUALLY",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_NEVER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_NEVER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_N",
+    "toId": "V_NEVER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_V",
+    "toId": "V_NEVER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_BECAUSE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_B",
+    "toId": "V_BECAUSE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_U",
+    "toId": "V_BECAUSE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_C",
+    "toId": "V_BECAUSE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_BECAUSE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_S",
+    "toId": "V_BECAUSE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_BEFORE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_BEFORE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_BEFORE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_B",
+    "toId": "V_BEFORE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_F",
+    "toId": "V_BEFORE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_ENOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_ENOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_U",
+    "toId": "V_ENOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_G",
+    "toId": "V_ENOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_H",
+    "toId": "V_ENOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_N",
+    "toId": "V_ENOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_THROUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_THROUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_THROUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_U",
+    "toId": "V_THROUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_G",
+    "toId": "V_THROUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_H",
+    "toId": "V_THROUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_ALTHOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_ALTHOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_U",
+    "toId": "V_ALTHOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_ALTHOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_G",
+    "toId": "V_ALTHOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_H",
+    "toId": "V_ALTHOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_L",
+    "toId": "V_ALTHOUGH",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_THOUGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_THOUGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_U",
+    "toId": "V_THOUGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_G",
+    "toId": "V_THOUGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_H",
+    "toId": "V_THOUGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_RIGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_RIGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_RIGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_G",
+    "toId": "V_RIGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_H",
+    "toId": "V_RIGHT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_V",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_N",
+    "toId": "V_ENVIRONMENT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_REPORT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_REPORT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_REPORT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_REPORT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_P",
+    "toId": "V_REPORT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_MONITORING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_MONITORING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_MONITORING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_MONITORING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_MONITORING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_G",
+    "toId": "V_MONITORING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_N",
+    "toId": "V_MONITORING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_W",
+    "toId": "V_WASTEWATER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_WASTEWATER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_WASTEWATER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_WASTEWATER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_WASTEWATER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_S",
+    "toId": "V_WASTEWATER",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_S",
+    "toId": "V_SAMPLE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_SAMPLE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_SAMPLE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_A",
+    "toId": "V_SAMPLE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_P",
+    "toId": "V_SAMPLE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_L",
+    "toId": "V_SAMPLE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_S",
+    "toId": "V_RESULT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_RESULT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_RESULT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_RESULT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_U",
+    "toId": "V_RESULT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_L",
+    "toId": "V_RESULT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_LIMIT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_LIMIT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_LIMIT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_L",
+    "toId": "V_LIMIT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_PROJECT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_PROJECT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_PROJECT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_PROJECT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_C",
+    "toId": "V_PROJECT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_J",
+    "toId": "V_PROJECT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_P",
+    "toId": "V_PROJECT",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_MEETING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_T",
+    "toId": "V_MEETING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_MEETING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_MEETING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_G",
+    "toId": "V_MEETING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_N",
+    "toId": "V_MEETING",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_E",
+    "toId": "V_IMPROVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_R",
+    "toId": "V_IMPROVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_V",
+    "toId": "V_IMPROVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_I",
+    "toId": "V_IMPROVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_O",
+    "toId": "V_IMPROVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_M",
+    "toId": "V_IMPROVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  },
+  {
+    "fromId": "L_P",
+    "toId": "V_IMPROVE",
+    "weight": 0.05,
+    "hardPrerequisite": false
+  }
+]

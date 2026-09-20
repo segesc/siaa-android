@@ -1,0 +1,1158 @@
+[
+  {
+    "id": "G_PRON",
+    "name": "Pronombres personales",
+    "cefr": "Pre-A1",
+    "domain": "GRAMMAR",
+    "form": "I/you/he/she/it/we/they",
+    "meaning": "persona",
+    "use": "sujeto",
+    "importance": 0.95,
+    "priorMastery": 0.2,
+    "tags": []
+  },
+  {
+    "id": "G_BE",
+    "name": "Verbo BE presente",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "am/is/are",
+    "meaning": "estado, identidad, ubicación",
+    "use": "I am / she is / they are",
+    "importance": 0.95,
+    "priorMastery": 0.15,
+    "tags": []
+  },
+  {
+    "id": "G_PRESENT_BASE",
+    "name": "Present simple base",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "subject + base verb",
+    "meaning": "rutinas y hechos",
+    "use": "I work",
+    "importance": 0.95,
+    "priorMastery": 0.15,
+    "tags": []
+  },
+  {
+    "id": "G_3SG",
+    "name": "Tercera persona -s",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "he/she/it + verb-s",
+    "meaning": "rutinas 3sg",
+    "use": "She works",
+    "importance": 0.9,
+    "priorMastery": 0.12,
+    "tags": []
+  },
+  {
+    "id": "G_DOES_Q",
+    "name": "Preguntas con do/does",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "Do/Does + subject + base",
+    "meaning": "preguntas de rutina",
+    "use": "Does she work?",
+    "importance": 0.9,
+    "priorMastery": 0.1,
+    "tags": []
+  },
+  {
+    "id": "G_DONT_NEG",
+    "name": "Negación do/does",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "do/does not + base",
+    "meaning": "negación",
+    "use": "She does not work",
+    "importance": 0.85,
+    "priorMastery": 0.1,
+    "tags": []
+  },
+  {
+    "id": "G_PRESENT_CONT",
+    "name": "Present continuous",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "be + verb-ing",
+    "meaning": "acción en progreso",
+    "use": "She is working",
+    "importance": 0.9,
+    "priorMastery": 0.1,
+    "tags": []
+  },
+  {
+    "id": "G_PAST_SIMPLE",
+    "name": "Past simple",
+    "cefr": "A2",
+    "domain": "GRAMMAR",
+    "form": "past form",
+    "meaning": "pasado terminado",
+    "use": "She worked yesterday",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "G_ARTICLES",
+    "name": "Artículos",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "a/an/the",
+    "meaning": "referencia",
+    "use": "a car / the car",
+    "importance": 0.75,
+    "priorMastery": 0.12,
+    "tags": []
+  },
+  {
+    "id": "G_THERE",
+    "name": "There is/are",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "there is/are",
+    "meaning": "existencia",
+    "use": "There is a problem",
+    "importance": 0.7,
+    "priorMastery": 0.1,
+    "tags": []
+  },
+  {
+    "id": "G_CAN",
+    "name": "Modal can",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "can + base",
+    "meaning": "habilidad/posibilidad",
+    "use": "I can swim",
+    "importance": 0.8,
+    "priorMastery": 0.12,
+    "tags": []
+  },
+  {
+    "id": "G_WANT_TO",
+    "name": "Want to + verb",
+    "cefr": "A1",
+    "domain": "GRAMMAR",
+    "form": "want to + verb",
+    "meaning": "deseo",
+    "use": "I want to learn",
+    "importance": 0.85,
+    "priorMastery": 0.12,
+    "tags": []
+  },
+  {
+    "id": "G_PERFECT",
+    "name": "Present perfect",
+    "cefr": "B1",
+    "domain": "GRAMMAR",
+    "form": "have/has + participle",
+    "meaning": "pasado relevante",
+    "use": "I have finished",
+    "importance": 0.75,
+    "priorMastery": 0.06,
+    "tags": []
+  },
+  {
+    "id": "G_COND1",
+    "name": "First conditional",
+    "cefr": "B1",
+    "domain": "GRAMMAR",
+    "form": "if + present, will",
+    "meaning": "condición futura",
+    "use": "If it rains, I will stay",
+    "importance": 0.65,
+    "priorMastery": 0.05,
+    "tags": []
+  },
+  {
+    "id": "O_ALPHABET",
+    "name": "Alfabeto inglés",
+    "cefr": "Pre-A1",
+    "domain": "ORTHOGRAPHY",
+    "form": "A-Z",
+    "meaning": "nombres de letras",
+    "use": "deletreo",
+    "importance": 0.9,
+    "priorMastery": 0.12,
+    "tags": []
+  },
+  {
+    "id": "L_A",
+    "name": "Nombre de letra A",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "A",
+    "meaning": "ay",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_B",
+    "name": "Nombre de letra B",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "B",
+    "meaning": "bee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_C",
+    "name": "Nombre de letra C",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "C",
+    "meaning": "cee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_D",
+    "name": "Nombre de letra D",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "D",
+    "meaning": "dee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_E",
+    "name": "Nombre de letra E",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "E",
+    "meaning": "ee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_F",
+    "name": "Nombre de letra F",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "F",
+    "meaning": "ef",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_G",
+    "name": "Nombre de letra G",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "G",
+    "meaning": "gee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_H",
+    "name": "Nombre de letra H",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "H",
+    "meaning": "aitch",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_I",
+    "name": "Nombre de letra I",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "I",
+    "meaning": "eye",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_J",
+    "name": "Nombre de letra J",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "J",
+    "meaning": "jay",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_K",
+    "name": "Nombre de letra K",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "K",
+    "meaning": "kay",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_L",
+    "name": "Nombre de letra L",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "L",
+    "meaning": "el",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_M",
+    "name": "Nombre de letra M",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "M",
+    "meaning": "em",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_N",
+    "name": "Nombre de letra N",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "N",
+    "meaning": "en",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_O",
+    "name": "Nombre de letra O",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "O",
+    "meaning": "oh",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_P",
+    "name": "Nombre de letra P",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "P",
+    "meaning": "pee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_Q",
+    "name": "Nombre de letra Q",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "Q",
+    "meaning": "cue",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_R",
+    "name": "Nombre de letra R",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "R",
+    "meaning": "ar",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_S",
+    "name": "Nombre de letra S",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "S",
+    "meaning": "ess",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_T",
+    "name": "Nombre de letra T",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "T",
+    "meaning": "tee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_U",
+    "name": "Nombre de letra U",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "U",
+    "meaning": "you",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_V",
+    "name": "Nombre de letra V",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "V",
+    "meaning": "vee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_W",
+    "name": "Nombre de letra W",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "W",
+    "meaning": "double u",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_X",
+    "name": "Nombre de letra X",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "X",
+    "meaning": "ex",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_Y",
+    "name": "Nombre de letra Y",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "Y",
+    "meaning": "why",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "L_Z",
+    "name": "Nombre de letra Z",
+    "cefr": "Pre-A1",
+    "domain": "LETTER",
+    "form": "Z",
+    "meaning": "zee",
+    "use": "spelling",
+    "importance": 0.55,
+    "priorMastery": 0.1,
+    "tags": [
+      "alphabet"
+    ]
+  },
+  {
+    "id": "O_IGH",
+    "name": "Patrón -igh",
+    "cefr": "A2",
+    "domain": "ORTHOGRAPHY",
+    "form": "igh",
+    "meaning": "right/night/light",
+    "use": "sound↔spelling",
+    "importance": 0.65,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "O_OUGH",
+    "name": "Familia -ough",
+    "cefr": "A2",
+    "domain": "ORTHOGRAPHY",
+    "form": "ough",
+    "meaning": "enough/through/thought/although",
+    "use": "sound↔spelling",
+    "importance": 0.65,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "O_SILENT_E",
+    "name": "Silent e",
+    "cefr": "A1",
+    "domain": "ORTHOGRAPHY",
+    "form": "CVCe",
+    "meaning": "make/time",
+    "use": "sound↔spelling",
+    "importance": 0.65,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "O_ED",
+    "name": "Terminaciones -ed",
+    "cefr": "A2",
+    "domain": "ORTHOGRAPHY",
+    "form": "-ed",
+    "meaning": "/t/ /d/ /ɪd/",
+    "use": "sound↔spelling",
+    "importance": 0.65,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "O_WORD_BOUND",
+    "name": "Fronteras ortográficas",
+    "cefr": "A1",
+    "domain": "ORTHOGRAPHY",
+    "form": "word boundaries",
+    "meaning": "flujo oral ↔ palabras",
+    "use": "sound↔spelling",
+    "importance": 0.65,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "LS_WORD_BOUND",
+    "name": "Segmentación auditiva",
+    "cefr": "A1",
+    "domain": "LISTENING",
+    "form": "",
+    "meaning": "identificar palabras en flujo oral",
+    "use": "",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "LS_KEYWORDS",
+    "name": "Palabras clave",
+    "cefr": "A1",
+    "domain": "LISTENING",
+    "form": "",
+    "meaning": "extraer contenido principal",
+    "use": "",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "LS_DETAIL",
+    "name": "Listening for detail",
+    "cefr": "A2",
+    "domain": "LISTENING",
+    "form": "",
+    "meaning": "detalles específicos",
+    "use": "",
+    "importance": 0.75,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "PH_SHORT_LONG_I",
+    "name": "Contraste /ɪ/–/iː/",
+    "cefr": "A1",
+    "domain": "PHONOLOGY",
+    "form": "",
+    "meaning": "ship/sheep",
+    "use": "",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "PH_TH",
+    "name": "/θ/ y /ð/",
+    "cefr": "A2",
+    "domain": "PHONOLOGY",
+    "form": "",
+    "meaning": "think/this",
+    "use": "",
+    "importance": 0.65,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "PH_STRESS",
+    "name": "Word stress",
+    "cefr": "A2",
+    "domain": "PHONOLOGY",
+    "form": "",
+    "meaning": "sílaba tónica",
+    "use": "",
+    "importance": 0.7,
+    "priorMastery": 0.08,
+    "tags": []
+  },
+  {
+    "id": "V_WORK",
+    "name": "work",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "work",
+    "meaning": "trabajar",
+    "use": "receptive+productive",
+    "importance": 0.95,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_LIVE",
+    "name": "live",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "live",
+    "meaning": "vivir",
+    "use": "receptive+productive",
+    "importance": 0.85,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_EAT",
+    "name": "eat",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "eat",
+    "meaning": "comer",
+    "use": "receptive+productive",
+    "importance": 0.85,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_WANT",
+    "name": "want",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "want",
+    "meaning": "querer",
+    "use": "receptive+productive",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_NEED",
+    "name": "need",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "need",
+    "meaning": "necesitar",
+    "use": "receptive+productive",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_TIME",
+    "name": "time",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "time",
+    "meaning": "tiempo",
+    "use": "receptive+productive",
+    "importance": 0.95,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_HOME",
+    "name": "home",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "home",
+    "meaning": "casa/hogar",
+    "use": "receptive+productive",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_HERE",
+    "name": "here",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "here",
+    "meaning": "aquí",
+    "use": "receptive+productive",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_TODAY",
+    "name": "today",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "today",
+    "meaning": "hoy",
+    "use": "receptive+productive",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_YESTERDAY",
+    "name": "yesterday",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "yesterday",
+    "meaning": "ayer",
+    "use": "receptive+productive",
+    "importance": 0.85,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_ALWAYS",
+    "name": "always",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "always",
+    "meaning": "siempre",
+    "use": "receptive+productive",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_USUALLY",
+    "name": "usually",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "usually",
+    "meaning": "normalmente",
+    "use": "receptive+productive",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_NEVER",
+    "name": "never",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "never",
+    "meaning": "nunca",
+    "use": "receptive+productive",
+    "importance": 0.85,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_BECAUSE",
+    "name": "because",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "because",
+    "meaning": "porque",
+    "use": "receptive+productive",
+    "importance": 0.85,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_BEFORE",
+    "name": "before",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "before",
+    "meaning": "antes",
+    "use": "receptive+productive",
+    "importance": 0.75,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_ENOUGH",
+    "name": "enough",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "enough",
+    "meaning": "suficiente",
+    "use": "receptive+productive",
+    "importance": 0.85,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_THROUGH",
+    "name": "through",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "through",
+    "meaning": "a través de",
+    "use": "receptive+productive",
+    "importance": 0.7,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_ALTHOUGH",
+    "name": "although",
+    "cefr": "B1",
+    "domain": "VOCABULARY",
+    "form": "although",
+    "meaning": "aunque",
+    "use": "receptive+productive",
+    "importance": 0.7,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_THOUGHT",
+    "name": "thought",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "thought",
+    "meaning": "pensó / pensamiento",
+    "use": "receptive+productive",
+    "importance": 0.7,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_RIGHT",
+    "name": "right",
+    "cefr": "A1",
+    "domain": "VOCABULARY",
+    "form": "right",
+    "meaning": "correcto / derecha",
+    "use": "receptive+productive",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_ENVIRONMENT",
+    "name": "environment",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "environment",
+    "meaning": "medio ambiente",
+    "use": "receptive+productive",
+    "importance": 0.9,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_REPORT",
+    "name": "report",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "report",
+    "meaning": "informe",
+    "use": "receptive+productive",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_MONITORING",
+    "name": "monitoring",
+    "cefr": "B1",
+    "domain": "VOCABULARY",
+    "form": "monitoring",
+    "meaning": "monitoreo",
+    "use": "receptive+productive",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_WASTEWATER",
+    "name": "wastewater",
+    "cefr": "B1",
+    "domain": "VOCABULARY",
+    "form": "wastewater",
+    "meaning": "agua residual",
+    "use": "receptive+productive",
+    "importance": 0.7,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_SAMPLE",
+    "name": "sample",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "sample",
+    "meaning": "muestra",
+    "use": "receptive+productive",
+    "importance": 0.75,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_RESULT",
+    "name": "result",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "result",
+    "meaning": "resultado",
+    "use": "receptive+productive",
+    "importance": 0.8,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_LIMIT",
+    "name": "limit",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "limit",
+    "meaning": "límite",
+    "use": "receptive+productive",
+    "importance": 0.75,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_PROJECT",
+    "name": "project",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "project",
+    "meaning": "proyecto",
+    "use": "receptive+productive",
+    "importance": 0.85,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_MEETING",
+    "name": "meeting",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "meeting",
+    "meaning": "reunión",
+    "use": "receptive+productive",
+    "importance": 0.75,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "V_IMPROVE",
+    "name": "improve",
+    "cefr": "A2",
+    "domain": "VOCABULARY",
+    "form": "improve",
+    "meaning": "mejorar",
+    "use": "receptive+productive",
+    "importance": 0.75,
+    "priorMastery": 0.08,
+    "tags": [
+      "lexeme"
+    ]
+  },
+  {
+    "id": "C_DONT_KNOW",
+    "name": "I don’t know",
+    "cefr": "A1",
+    "domain": "CHUNK",
+    "form": "I don’t know",
+    "meaning": "no lo sé",
+    "use": "formulaic",
+    "importance": 0.75,
+    "priorMastery": 0.07,
+    "tags": []
+  },
+  {
+    "id": "C_NOT_SURE",
+    "name": "I’m not sure",
+    "cefr": "A2",
+    "domain": "CHUNK",
+    "form": "I’m not sure",
+    "meaning": "no estoy seguro",
+    "use": "formulaic",
+    "importance": 0.75,
+    "priorMastery": 0.07,
+    "tags": []
+  },
+  {
+    "id": "C_WANT_TO",
+    "name": "I want to",
+    "cefr": "A1",
+    "domain": "CHUNK",
+    "form": "I want to",
+    "meaning": "quiero",
+    "use": "formulaic",
+    "importance": 0.75,
+    "priorMastery": 0.07,
+    "tags": []
+  },
+  {
+    "id": "C_AS_FAR",
+    "name": "As far as I know",
+    "cefr": "B1",
+    "domain": "CHUNK",
+    "form": "As far as I know",
+    "meaning": "hasta donde sé",
+    "use": "formulaic",
+    "importance": 0.75,
+    "priorMastery": 0.07,
+    "tags": []
+  },
+  {
+    "id": "C_DEPENDS",
+    "name": "It depends on",
+    "cefr": "A2",
+    "domain": "CHUNK",
+    "form": "It depends on",
+    "meaning": "depende de",
+    "use": "formulaic",
+    "importance": 0.75,
+    "priorMastery": 0.07,
+    "tags": []
+  }
+]

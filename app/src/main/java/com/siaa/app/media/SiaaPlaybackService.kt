@@ -39,6 +39,7 @@ class SiaaPlaybackService : MediaSessionService() {
     private lateinit var audioOutputGuard: AudioOutputGuard
     private lateinit var audioFocus: AudioFocusController
     private val router = EarbudCommandRouter()
+    private val interpreter = com.siaa.core.runtime.MediaCommandInterpreter()
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
 
     private val appGraph get() = (application as SiaaApplication).graph
@@ -59,8 +60,33 @@ class SiaaPlaybackService : MediaSessionService() {
                     intent: Intent
                 ): Boolean {
                     val mapped = router.fromMediaButtonIntent(intent) ?: return false
-                    appGraph.mediaDiagnostics.record("keyCode=${mapped.second} -> ${mapped.first}", mapped.first.name)
-                    return runtime.onCommand(mapped.first)
+                    val (mediaEvent, keyCode) = mapped
+                    appGraph.mediaDiagnostics.record(mediaEvent, keyCode)
+
+                    val snap = runtime.snapshot.value
+                    serviceScope.launch {
+                        snap.sessionId?.let { sid ->
+                            appGraph.repository.recordRuntimeEvent(
+                                com.siaa.core.model.RuntimeEvent(
+                                    sessionId = sid,
+                                    turnId = snap.turnId,
+                                    timestampEpochMs = System.currentTimeMillis(),
+                                    eventType = com.siaa.core.model.RuntimeEventType.MEDIA_COMMAND_RECEIVED,
+                                    stateBefore = snap.state.name,
+                                    stateAfter = snap.state.name,
+                                    mediaKeyCode = keyCode,
+                                    payload = mediaEvent.name
+                                )
+                            )
+                        }
+                    }
+
+                    val cmd = interpreter.interpret(
+                        event = mediaEvent,
+                        state = snap.state
+                    ) ?: return false
+
+                    return runtime.onCommand(cmd)
                 }
             })
             .build()
@@ -95,6 +121,7 @@ class SiaaPlaybackService : MediaSessionService() {
                 val maxItems = intent.getIntExtra(EXTRA_MAX_ITEMS, 60).coerceIn(1, 500)
                 val announceControls = intent.getBooleanExtra(EXTRA_ANNOUNCE_CONTROLS, true)
                 val feedbackExplanations = intent.getBooleanExtra(EXTRA_FEEDBACK_EXPLANATIONS, true)
+                val speechRate = intent.getFloatExtra(EXTRA_SPEECH_RATE, 1.0f).coerceIn(0.5f, 2.0f)
                 if (audioFocus.request()) {
                     activateMediaAnchor()
                     serviceScope.launch {
@@ -112,7 +139,8 @@ class SiaaPlaybackService : MediaSessionService() {
                             maxItems = maxItems,
                             announceControls = announceControls,
                             feedbackExplanations = feedbackExplanations,
-                            capabilities = capabilities
+                            capabilities = capabilities,
+                            speechRate = speechRate
                         ))
                     }
                 } else appGraph.mediaDiagnostics.record("AudioFocus no concedido")
@@ -221,6 +249,7 @@ class SiaaPlaybackService : MediaSessionService() {
         const val EXTRA_MAX_ITEMS = "max_items"
         const val EXTRA_ANNOUNCE_CONTROLS = "announce_controls"
         const val EXTRA_FEEDBACK_EXPLANATIONS = "feedback_explanations"
+        const val EXTRA_SPEECH_RATE = "speech_rate"
         private const val CHANNEL_ID = "siaa_session"
         private const val NOTIFICATION_ID = 1001
     }

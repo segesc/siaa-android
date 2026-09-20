@@ -45,6 +45,7 @@ class MainActivity : ComponentActivity() {
             putExtra(SiaaPlaybackService.EXTRA_MAX_ITEMS, preferences.maxItems)
             putExtra(SiaaPlaybackService.EXTRA_ANNOUNCE_CONTROLS, preferences.announceControls)
             putExtra(SiaaPlaybackService.EXTRA_FEEDBACK_EXPLANATIONS, preferences.feedbackExplanations)
+            putExtra(SiaaPlaybackService.EXTRA_SPEECH_RATE, preferences.speechRate)
         }
         ContextCompat.startForegroundService(this, intent)
     }

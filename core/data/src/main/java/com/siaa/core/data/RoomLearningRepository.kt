@@ -6,7 +6,10 @@ import com.siaa.core.algorithm.MasteryCheckpointEvaluator
 import com.siaa.core.model.*
 import com.siaa.core.runtime.LearningRepository
 
-class RoomLearningRepository(private val db: SiaaDatabase) : LearningRepository {
+class RoomLearningRepository(
+    private val db: SiaaDatabase,
+    private val policy: SessionPolicy = SessionPolicy()
+) : LearningRepository {
     override suspend fun loadSnapshot(): LearningSnapshot {
         val components = db.contentDao().allKcs().map { it.toModel() }
         val states = db.learnerDao().allStates().map { it.toModel() }
@@ -74,10 +77,13 @@ class RoomLearningRepository(private val db: SiaaDatabase) : LearningRepository 
             val recall = if (elapsed.isFinite()) HalfLifeModel.recallProbability(elapsed, s.halfLifeHours) else 0.0
             recall < 0.75 && s.totalAttempts > 0
         }
-        val avgMastery = if (states.isEmpty()) 0.0 else states.map { it.mastery }.average()
-        val avgRetention = if (states.isEmpty()) 0.0 else states.map { s ->
-            val elapsed = s.lastReviewedAtEpochMs?.let { (nowEpochMs - it).coerceAtLeast(0L) / 3_600_000.0 } ?: Double.POSITIVE_INFINITY
-            if (elapsed.isFinite()) HalfLifeModel.recallProbability(elapsed, s.halfLifeHours) else 0.0
+        val avgMastery = if (snapshot.components.isEmpty()) 0.0 else snapshot.components.map { kc ->
+            snapshot.stateByKcId[kc.id]?.mastery ?: kc.priorMastery
+        }.average()
+        val avgRetention = if (snapshot.components.isEmpty()) 0.0 else snapshot.components.map { kc ->
+            val s = snapshot.stateByKcId[kc.id]
+            val elapsed = s?.lastReviewedAtEpochMs?.let { (nowEpochMs - it).coerceAtLeast(0L) / 3_600_000.0 } ?: Double.POSITIVE_INFINITY
+            if (elapsed.isFinite() && s != null) HalfLifeModel.recallProbability(elapsed, s.halfLifeHours) else 0.0
         }.average()
         val cefr = estimateCefr(snapshot, nowEpochMs)
         return DashboardStats(total, mastered, due, avgMastery, avgRetention, db.sessionDao().interactionCount(), cefr)
@@ -97,7 +103,7 @@ class RoomLearningRepository(private val db: SiaaDatabase) : LearningRepository 
                 MasteryCheckpointEvaluator.evaluate(state, nowEpochMs).passed
             }
             val coverage = passedCount.toDouble() / kcs.size
-            if (coverage >= 0.70) {
+            if (coverage >= policy.cefrCoverageThreshold) {
                 best = level
             } else {
                 break

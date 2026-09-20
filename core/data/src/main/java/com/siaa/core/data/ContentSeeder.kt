@@ -1,21 +1,44 @@
 package com.siaa.core.data
 
 import android.content.Context
+import androidx.room.withTransaction
 import com.siaa.core.content.ContentPackValidator
+import com.siaa.core.content.ContentValidationIssue
 import com.siaa.core.content.ControlledVariantGenerator
 import com.siaa.core.content.LexemeSpec
-import com.siaa.core.content.ContentValidationIssue
 import org.json.JSONArray
-import androidx.room.withTransaction
+import org.json.JSONObject
+import java.security.MessageDigest
 
 class ContentSeeder(
     private val context: Context,
     private val db: SiaaDatabase
 ) {
-    companion object { const val CONTENT_VERSION = "0.7.0" }
     suspend fun seedIfNeeded() {
+        val manifestObj = readObject("content/manifest.json")
+        val contentVersion = manifestObj.optString("contentVersion", manifestObj.optString("version", "0.7.0"))
         val installedVersion = db.metaDao().get("content_version")
-        if (installedVersion == CONTENT_VERSION && db.contentDao().kcCount() > 0) return
+        if (installedVersion == contentVersion && db.contentDao().kcCount() > 0) return
+
+        val checksumsObj = manifestObj.optJSONObject("checksums")
+        if (checksumsObj != null) {
+            val filesToCheck = listOf(
+                "content/kcs.json" to "kcs.json",
+                "content/edges.json" to "edges.json",
+                "content/exercises.json" to "exercises.json",
+                "content/lexemes.json" to "lexemes.json"
+            )
+            for ((path, key) in filesToCheck) {
+                val expectedHash = checksumsObj.optString(key, "")
+                if (expectedHash.isNotEmpty()) {
+                    val actualHash = sha256Asset(path)
+                    check(actualHash.equals(expectedHash, ignoreCase = true)) {
+                        "Checksum mismatch para $path: esperado $expectedHash pero fue $actualHash"
+                    }
+                }
+            }
+        }
+
         val kcs = readArray("content/kcs.json").map { obj ->
             KnowledgeComponentEntity(
                 id = obj.getString("id"),
@@ -53,7 +76,8 @@ class ContentSeeder(
                 explanationEs = obj.optString("explanationEs"),
                 spellTarget = obj.optString("spellTarget"),
                 estimatedSeconds = obj.optInt("estimatedSeconds", 20),
-                tagsCsv = jsonArrayToCsv(obj.optJSONArray("tags"))
+                tagsCsv = jsonArrayToCsv(obj.optJSONArray("tags")),
+                misconceptionIdsCsv = jsonArrayToCsv(obj.optJSONArray("misconceptionIds"))
             )
         }
         val generator = ControlledVariantGenerator()
@@ -89,7 +113,13 @@ class ContentSeeder(
                     tagsCsv = "generated,vocabulary"
                 )
             }
-        val exercises = (staticExercises + generatedExercises).distinctBy { it.id }
+
+        val allExercises = staticExercises + generatedExercises
+        val duplicates = allExercises.groupBy { it.id }.filter { it.value.size > 1 }.keys
+        check(duplicates.isEmpty()) {
+            "Colisión de IDs detectada en ejercicios del content pack: ${duplicates.take(5)}"
+        }
+        val exercises = allExercises
 
         val validation = ContentPackValidator.validate(
             components = kcs.map { it.toModel() },
@@ -102,21 +132,36 @@ class ContentSeeder(
         }
 
         db.withTransaction {
-            // El content pack es versionado: reemplazamos definiciones, preservando el modelo del alumno.
             db.contentDao().clearEdges()
             db.contentDao().clearExercises()
             db.contentDao().clearKcs()
             db.contentDao().insertKcs(kcs)
             db.contentDao().insertEdges(edges)
             db.contentDao().insertExercises(exercises)
-            db.metaDao().put(AppMetaEntity("content_version", CONTENT_VERSION))
+
+            val validKcIds = kcs.map { it.id }
+            db.learnerDao().deleteOrphanStates(validKcIds)
+
+            db.metaDao().put(AppMetaEntity("content_version", contentVersion))
         }
     }
 
-    private fun readArray(path: String): List<org.json.JSONObject> {
+    private fun readObject(path: String): JSONObject {
+        val text = context.assets.open(path).bufferedReader().use { it.readText() }
+        return JSONObject(text)
+    }
+
+    private fun readArray(path: String): List<JSONObject> {
         val text = context.assets.open(path).bufferedReader().use { it.readText() }
         val arr = JSONArray(text)
         return List(arr.length()) { arr.getJSONObject(it) }
+    }
+
+    private fun sha256Asset(path: String): String {
+        val bytes = context.assets.open(path).use { it.readBytes() }
+        val md = MessageDigest.getInstance("SHA-256")
+        val digest = md.digest(bytes)
+        return digest.joinToString("") { "%02x".format(it) }
     }
 
     private fun jsonArrayToList(arr: JSONArray?): List<String> {

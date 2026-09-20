@@ -7,6 +7,7 @@ import com.siaa.core.model.DashboardStats
 import com.siaa.core.model.DeviceProfile
 import com.siaa.core.model.LearnerKcState
 import com.siaa.core.model.KcDomain
+import com.siaa.core.model.SessionPolicy
 import com.siaa.core.model.SessionSummary
 import com.siaa.core.algorithm.KnowledgeGraphEngine
 import com.siaa.core.runtime.RuntimeSnapshot
@@ -60,11 +61,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun refresh() {
         viewModelScope.launch {
             if (!graph.contentReady.value) return@launch
-            _stats.value = graph.repository.dashboardStats(System.currentTimeMillis())
+            val now = System.currentTimeMillis()
+            _stats.value = graph.repository.dashboardStats(now)
             val snapshot = graph.repository.loadSnapshot()
             _states.value = snapshot.states.sortedBy { it.kcId }
             val stateMap = snapshot.stateByKcId
             val kg = KnowledgeGraphEngine(snapshot.components, snapshot.edges)
+            val policy = SessionPolicy()
             _curriculum.value = snapshot.components.map { kc ->
                 CurriculumItem(
                     id = kc.id,
@@ -73,7 +76,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     domain = kc.domain,
                     mastery = stateMap[kc.id]?.mastery ?: kc.priorMastery,
                     readiness = kg.readiness(kc.id, stateMap),
-                    unlocked = kg.isUnlocked(kc.id, stateMap)
+                    unlocked = kg.isUnlocked(kc.id, stateMap, now, policy)
                 )
             }.sortedWith(compareBy<CurriculumItem> { cefrOrder(it.cefr) }.thenBy { it.domain.name }.thenBy { it.name })
             _deviceProfile.value = graph.repository.latestDeviceProfile()
@@ -101,12 +104,21 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun saveCalibration(name: String = "Audífonos actuales") {
         viewModelScope.launch {
-            val observed = graph.mediaDiagnostics.observedCommands.value
+            val observed = graph.mediaDiagnostics.observedEvents.value
+            val primary = observed.lastOrNull { it.event == com.siaa.core.runtime.MediaControlEvent.PLAY_PAUSE || it.event == com.siaa.core.runtime.MediaControlEvent.PLAY }
+            val secondary = observed.lastOrNull { it.event == com.siaa.core.runtime.MediaControlEvent.NEXT }
+            val back = observed.lastOrNull { it.event == com.siaa.core.runtime.MediaControlEvent.PREVIOUS }
+            val stop = observed.lastOrNull { it.event == com.siaa.core.runtime.MediaControlEvent.STOP }
+
             val profile = DeviceProfile(
                 name = name,
-                playPauseAvailable = "PRIMARY" in observed,
-                nextAvailable = "SECONDARY" in observed,
-                previousAvailable = "BACK" in observed,
+                primaryKeyCode = primary?.keyCode,
+                secondaryKeyCode = secondary?.keyCode,
+                backKeyCode = back?.keyCode,
+                stopKeyCode = stop?.keyCode,
+                playPauseAvailable = primary != null,
+                nextAvailable = secondary != null,
+                previousAvailable = back != null,
                 lastSeenAtEpochMs = System.currentTimeMillis()
             )
             graph.repository.saveDeviceProfile(profile)

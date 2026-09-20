@@ -29,9 +29,14 @@ class LessonRuntime(
     private var activeExercise: ExerciseDefinition? = null
     private var activePlannerScore: Double? = null
     private var currentTurn = TurnContext()
+    private val answerAccepted = java.util.concurrent.atomic.AtomicBoolean(false)
     private var lastPrompt: suspend () -> Unit = {}
     private var sessionJob: Job? = null
     private var timeoutJob: Job? = null
+
+    private suspend fun speakText(text: String, languageTag: String = "es-PE", rate: Float = 1.0f) {
+        speech.speak(text, languageTag, (config.speechRate * rate).coerceIn(0.5f, 2.0f))
+    }
 
     fun start(config: SessionConfig = SessionConfig()) {
         if (_snapshot.value.state !in setOf(LessonState.IDLE, LessonState.SESSION_END, LessonState.ERROR)) return
@@ -42,12 +47,19 @@ class LessonRuntime(
             try {
                 val id = repository.createSession(config.mode, clock.nowEpochMs())
                 currentTurn = TurnContext(turnId = 0L)
+                answerAccepted.set(false)
+                recordEvent(
+                    eventType = RuntimeEventType.SESSION_STARTED,
+                    stateBefore = _snapshot.value.state.name,
+                    stateAfter = LessonState.PREPARING.name,
+                    payload = "Mode: ${config.mode.name}, maxItems: ${config.maxItems}"
+                )
                 transitionTo(
                     newState = LessonState.PREPARING,
                     message = "Preparando sesión",
                     updateSnapshot = { it.copy(mode = config.mode, sessionId = id, turnId = 0L) }
                 )
-                speech.speak(introText(config.mode), "es-PE")
+                speakText(introText(config.mode), "es-PE")
                 nextExercise()
             } catch (t: Throwable) {
                 fail(t)
@@ -56,6 +68,8 @@ class LessonRuntime(
     }
 
     fun stop() {
+        timeoutJob?.cancel()
+        speech.stop()
         scope.launch { finishSession("Sesión finalizada") }
     }
 
@@ -68,6 +82,14 @@ class LessonRuntime(
     }
 
     fun pauseForRouteChange() {
+        scope.launch {
+            recordEvent(
+                eventType = RuntimeEventType.ROUTE_LOST,
+                stateBefore = _snapshot.value.state.name,
+                stateAfter = LessonState.PAUSED.name,
+                payload = "Audio route lost"
+            )
+        }
         pauseInternal(PauseReason.AUDIO_ROUTE_LOST, "Pausado: se desconectó la salida de audio")
     }
 
@@ -81,6 +103,12 @@ class LessonRuntime(
         val current = _snapshot.value
         if (current.state == LessonState.PAUSED) return
         scope.launch {
+            recordEvent(
+                eventType = RuntimeEventType.PAUSED,
+                stateBefore = current.state.name,
+                stateAfter = LessonState.PAUSED.name,
+                payload = reason.name
+            )
             transitionTo(
                 newState = LessonState.PAUSED,
                 message = message,
@@ -115,8 +143,60 @@ class LessonRuntime(
     }
 
     private fun handleBinary(command: RuntimeCommand): Boolean = when (command) {
-        RuntimeCommand.PRIMARY -> { timeoutJob?.cancel(); answerBinary("A"); true }
-        RuntimeCommand.SECONDARY -> { timeoutJob?.cancel(); answerBinary("B"); true }
+        RuntimeCommand.PRIMARY -> {
+            if (!answerAccepted.compareAndSet(false, true)) {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_REJECTED_DUPLICATE,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = "A"
+                    )
+                }
+                true
+            } else {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_ACCEPTED,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = "A"
+                    )
+                }
+                timeoutJob?.cancel()
+                answerBinary("A")
+                true
+            }
+        }
+        RuntimeCommand.SECONDARY -> {
+            if (!answerAccepted.compareAndSet(false, true)) {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_REJECTED_DUPLICATE,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = "B"
+                    )
+                }
+                true
+            } else {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_ACCEPTED,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = "B"
+                    )
+                }
+                timeoutJob?.cancel()
+                answerBinary("B")
+                true
+            }
+        }
         RuntimeCommand.BACK -> { timeoutJob?.cancel(); requestHelp(); true }
         RuntimeCommand.PAUSE -> { pauseManually(); true }
         RuntimeCommand.STOP -> { stop(); true }
@@ -124,9 +204,87 @@ class LessonRuntime(
     }
 
     private fun handleSelfAssessment(command: RuntimeCommand): Boolean = when (command) {
-        RuntimeCommand.PRIMARY -> { timeoutJob?.cancel(); answerSelf(ResponseConfidence.CORRECT); true }
-        RuntimeCommand.SECONDARY -> { timeoutJob?.cancel(); answerSelf(ResponseConfidence.UNSURE); true }
-        RuntimeCommand.BACK -> { timeoutJob?.cancel(); answerSelf(ResponseConfidence.WRONG); true }
+        RuntimeCommand.PRIMARY -> {
+            if (!answerAccepted.compareAndSet(false, true)) {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_REJECTED_DUPLICATE,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = ResponseConfidence.CORRECT.name
+                    )
+                }
+                true
+            } else {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_ACCEPTED,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = ResponseConfidence.CORRECT.name
+                    )
+                }
+                timeoutJob?.cancel()
+                answerSelf(ResponseConfidence.CORRECT)
+                true
+            }
+        }
+        RuntimeCommand.SECONDARY -> {
+            if (!answerAccepted.compareAndSet(false, true)) {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_REJECTED_DUPLICATE,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = ResponseConfidence.UNSURE.name
+                    )
+                }
+                true
+            } else {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_ACCEPTED,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = ResponseConfidence.UNSURE.name
+                    )
+                }
+                timeoutJob?.cancel()
+                answerSelf(ResponseConfidence.UNSURE)
+                true
+            }
+        }
+        RuntimeCommand.BACK -> {
+            if (!answerAccepted.compareAndSet(false, true)) {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_REJECTED_DUPLICATE,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = ResponseConfidence.WRONG.name
+                    )
+                }
+                true
+            } else {
+                scope.launch {
+                    recordEvent(
+                        eventType = RuntimeEventType.ANSWER_ACCEPTED,
+                        stateBefore = _snapshot.value.state.name,
+                        stateAfter = _snapshot.value.state.name,
+                        runtimeCommand = command.name,
+                        payload = ResponseConfidence.WRONG.name
+                    )
+                }
+                timeoutJob?.cancel()
+                answerSelf(ResponseConfidence.WRONG)
+                true
+            }
+        }
         RuntimeCommand.PAUSE -> { pauseManually(); true }
         RuntimeCommand.STOP -> { stop(); true }
         else -> false
@@ -154,6 +312,11 @@ class LessonRuntime(
 
     private suspend fun resumeFromPause() {
         val pausedFrom = _snapshot.value.pausedFrom ?: LessonState.PREPARING
+        recordEvent(
+            eventType = RuntimeEventType.RESUMED,
+            stateBefore = LessonState.PAUSED.name,
+            stateAfter = pausedFrom.name
+        )
         transitionTo(
             newState = pausedFrom,
             message = "Reanudando",
@@ -169,6 +332,12 @@ class LessonRuntime(
             val previousState = _snapshot.value.state
             val depth = (_snapshot.value.helpDepth + 1).coerceAtMost(4)
             currentTurn = currentTurn.copy(helpDepth = depth)
+            recordEvent(
+                eventType = RuntimeEventType.HELP_REQUESTED,
+                stateBefore = previousState.name,
+                stateAfter = LessonState.HELPING.name,
+                payload = "Depth: $depth"
+            )
             transitionTo(
                 newState = LessonState.HELPING,
                 message = "Ayuda nivel $depth",
@@ -176,40 +345,41 @@ class LessonRuntime(
             )
             when (depth) {
                 1 -> {
-                    speech.speak("Repetimos.", "es-PE")
-                    if (exercise.promptEs.isNotBlank()) speech.speak(exercise.promptEs, "es-PE")
-                    if (exercise.stimulusEn.isNotBlank()) speech.speak(exercise.stimulusEn, "en-US")
+                    speakText("Repetimos.", "es-PE")
+                    if (exercise.promptEs.isNotBlank()) speakText(exercise.promptEs, "es-PE")
+                    if (exercise.stimulusEn.isNotBlank()) speakText(exercise.stimulusEn, "en-US")
                 }
                 2 -> {
-                    speech.speak("Escucha más despacio.", "es-PE")
-                    if (exercise.stimulusEn.isNotBlank()) speech.speak(exercise.stimulusEn, "en-US", rate = 0.72f)
-                    else speech.speak(exercise.promptEs, "es-PE", rate = 0.82f)
+                    speakText("Escucha más despacio.", "es-PE")
+                    if (exercise.stimulusEn.isNotBlank()) speakText(exercise.stimulusEn, "en-US", rate = 0.72f)
+                    else speakText(exercise.promptEs, "es-PE", rate = 0.82f)
                 }
                 3 -> {
-                    speech.speak("Descomposición por palabras.", "es-PE")
+                    speakText("Descomposición por palabras.", "es-PE")
                     val words = exercise.stimulusEn.trim().split(Regex("\\s+")).filter { it.isNotBlank() }
                     if (words.isEmpty()) {
-                        speech.speak(exercise.promptEs, "es-PE", rate = 0.82f)
+                        speakText(exercise.promptEs, "es-PE", rate = 0.82f)
                     } else {
-                        words.forEach { word -> speech.speak(word, "en-US", rate = 0.78f) }
+                        words.forEach { word -> speakText(word, "en-US", rate = 0.78f) }
                     }
                 }
                 else -> {
                     if (exercise.spellTarget.isNotBlank()) {
-                        speech.speak("Deletreo de la palabra objetivo.", "es-PE")
-                        speech.speak(com.siaa.core.model.EnglishAlphabet.spellForSpeech(exercise.spellTarget), "en-US", rate = 0.80f)
+                        speakText("Deletreo de la palabra objetivo.", "es-PE")
+                        speakText(com.siaa.core.model.EnglishAlphabet.spellForSpeech(exercise.spellTarget), "en-US", rate = 0.80f)
                     } else {
-                        speech.speak("No hay una palabra objetivo marcada para deletreo. Repetimos la frase por palabras.", "es-PE")
+                        speakText("No hay una palabra objetivo marcada para deletreo. Repetimos la frase por palabras.", "es-PE")
                         exercise.stimulusEn.trim().split(Regex("\\s+")).filter { it.isNotBlank() }
-                            .forEach { word -> speech.speak(word, "en-US", rate = 0.75f) }
+                            .forEach { word -> speakText(word, "en-US", rate = 0.75f) }
                     }
                 }
             }
             if (previousState == LessonState.WAITING_BINARY && exercise.optionA.isNotBlank() && exercise.optionB.isNotBlank()) {
-                speech.speak("Opción A. ${exercise.optionA}. Opción B. ${exercise.optionB}.", optionLanguage(exercise), rate = if (depth >= 2) 0.82f else 1.0f)
+                speakText("Opción A. ${exercise.optionA}. Opción B. ${exercise.optionB}.", optionLanguage(exercise), rate = if (depth >= 2) 0.82f else 1.0f)
             }
             val finishedAt = clock.nowEpochMs()
             currentTurn = currentTurn.copy(promptFinishedAtEpochMs = finishedAt)
+            answerAccepted.set(false)
             transitionTo(
                 newState = previousState,
                 message = if (previousState == LessonState.WAITING_BINARY) "Esperando A o B" else "Autoevaluación",
@@ -252,18 +422,33 @@ class LessonRuntime(
         val retries = currentTurn.timeoutRetries + 1
         if (retries <= config.policy.maxTimeoutRetries) {
             currentTurn = currentTurn.copy(timeoutRetries = retries)
+            recordEvent(
+                eventType = RuntimeEventType.TIMEOUT,
+                stateBefore = waitingState.name,
+                stateAfter = _snapshot.value.state.name,
+                payload = "Retry $retries"
+            )
             earcon.play(EarconKind.ATTENTION)
-            speech.speak("¿Sigues ahí? Repetimos la actividad.", "es-PE")
+            delay(140L)
+            speakText("¿Sigues ahí? Repetimos la actividad.", "es-PE")
             lastPrompt()
         } else {
-            processAnswer(
-                exercise = exercise,
-                response = "TIMEOUT",
-                correct = false,
-                confidence = null,
-                graded = false,
-                kind = InteractionKind.TIMEOUT
-            )
+            if (answerAccepted.compareAndSet(false, true)) {
+                recordEvent(
+                    eventType = RuntimeEventType.TIMEOUT,
+                    stateBefore = waitingState.name,
+                    stateAfter = LessonState.EVALUATING.name,
+                    payload = "Max retries exceeded"
+                )
+                processAnswer(
+                    exercise = exercise,
+                    response = "TIMEOUT",
+                    correct = false,
+                    confidence = null,
+                    graded = false,
+                    kind = InteractionKind.TIMEOUT
+                )
+            }
         }
     }
 
@@ -376,6 +561,13 @@ class LessonRuntime(
             updatedStates = updatedStates,
             misconceptionUpdates = emptyList()
         )
+        recordEvent(
+            eventType = RuntimeEventType.TURN_COMMITTED,
+            stateBefore = LessonState.EVALUATING.name,
+            stateAfter = LessonState.EVALUATING.name,
+            exerciseId = exercise.id,
+            payload = "Turn ${currentTurn.turnId} committed"
+        )
 
         val newCompleted = snap.completedItems + (if (graded) 1 else 0)
         val newCorrect = snap.correctItems + (if (graded && correct) 1 else 0)
@@ -390,7 +582,6 @@ class LessonRuntime(
             }
         )
 
-        earcon.play(if (correct) EarconKind.CORRECT else EarconKind.INCORRECT)
         val feedback = if (!graded) {
             "Tiempo agotado. Pasamos a la siguiente actividad."
         } else if (correct) {
@@ -401,7 +592,16 @@ class LessonRuntime(
                 if (exercise.explanationEs.isNotBlank()) append(exercise.explanationEs)
             }
         }
-        speech.speak(feedback.trim(), "es-PE")
+        recordEvent(
+            eventType = RuntimeEventType.FEEDBACK,
+            stateBefore = LessonState.EVALUATING.name,
+            stateAfter = LessonState.FEEDBACK.name,
+            exerciseId = exercise.id,
+            payload = feedback.trim()
+        )
+        earcon.play(if (correct) EarconKind.CORRECT else EarconKind.INCORRECT)
+        delay(if (correct) 160L else 200L)
+        speakText(feedback.trim(), "es-PE")
         if (_snapshot.value.completedItems >= config.maxItems) finishSession("Objetivo de sesión completado") else nextExercise()
     }
 
@@ -424,9 +624,17 @@ class LessonRuntime(
             finishSession("No quedan actividades elegibles")
             return
         }
+        recordEvent(
+            eventType = RuntimeEventType.EXERCISE_SELECTED,
+            stateBefore = _snapshot.value.state.name,
+            stateAfter = LessonState.PLANNING_NEXT.name,
+            exerciseId = candidate.exercise.id,
+            payload = candidate.rationale
+        )
         activeExercise = candidate.exercise
         activePlannerScore = candidate.utility
         currentTurn = currentTurn.copy(exerciseId = candidate.exercise.id)
+        answerAccepted.set(false)
 
         transitionTo(
             newState = LessonState.PREPARING,
@@ -454,15 +662,22 @@ class LessonRuntime(
     private suspend fun presentTeaching(exercise: ExerciseDefinition) {
         val prompt: suspend () -> Unit = {
             timeoutJob?.cancel()
+            recordEvent(
+                eventType = RuntimeEventType.PROMPT_STARTED,
+                stateBefore = _snapshot.value.state.name,
+                stateAfter = LessonState.SPEAKING.name,
+                exerciseId = exercise.id
+            )
             transitionTo(newState = LessonState.SPEAKING, message = "Explicación")
             earcon.play(EarconKind.NEW_PROMPT)
-            if (exercise.promptEs.isNotBlank()) speech.speak(exercise.promptEs, "es-PE")
-            if (exercise.stimulusEn.isNotBlank()) speech.speak(exercise.stimulusEn, "en-US")
+            delay(90L)
+            if (exercise.promptEs.isNotBlank()) speakText(exercise.promptEs, "es-PE")
+            if (exercise.stimulusEn.isNotBlank()) speakText(exercise.stimulusEn, "en-US")
             if (exercise.spellTarget.isNotBlank()) {
-                speech.speak("Se escribe", "es-PE")
-                speech.speak(com.siaa.core.model.EnglishAlphabet.spellForSpeech(exercise.spellTarget), "en-US")
+                speakText("Se escribe", "es-PE")
+                speakText(com.siaa.core.model.EnglishAlphabet.spellForSpeech(exercise.spellTarget), "en-US")
             }
-            if (exercise.explanationEs.isNotBlank()) speech.speak(exercise.explanationEs, "es-PE")
+            if (exercise.explanationEs.isNotBlank()) speakText(exercise.explanationEs, "es-PE")
             val snap = _snapshot.value
             val learning = repository.loadSnapshot()
             val now = clock.nowEpochMs()
@@ -496,6 +711,13 @@ class LessonRuntime(
                     updatedStates = updatedStates,
                     misconceptionUpdates = emptyList()
                 )
+                recordEvent(
+                    eventType = RuntimeEventType.TURN_COMMITTED,
+                    stateBefore = LessonState.SPEAKING.name,
+                    stateAfter = LessonState.SPEAKING.name,
+                    exerciseId = exercise.id,
+                    payload = "Turn ${currentTurn.turnId} committed (teach)"
+                )
             }
             _snapshot.value = _snapshot.value.copy(completedItems = snap.completedItems + 1)
             nextExercise()
@@ -507,17 +729,31 @@ class LessonRuntime(
     private suspend fun presentBinary(exercise: ExerciseDefinition) {
         val prompt: suspend () -> Unit = {
             timeoutJob?.cancel()
+            recordEvent(
+                eventType = RuntimeEventType.PROMPT_STARTED,
+                stateBefore = _snapshot.value.state.name,
+                stateAfter = LessonState.SPEAKING.name,
+                exerciseId = exercise.id
+            )
             transitionTo(newState = LessonState.SPEAKING, message = "Pregunta")
             earcon.play(EarconKind.NEW_PROMPT)
-            if (exercise.promptEs.isNotBlank()) speech.speak(exercise.promptEs, "es-PE")
-            if (exercise.stimulusEn.isNotBlank()) speech.speak(exercise.stimulusEn, "en-US")
+            delay(90L)
+            if (exercise.promptEs.isNotBlank()) speakText(exercise.promptEs, "es-PE")
+            if (exercise.stimulusEn.isNotBlank()) speakText(exercise.stimulusEn, "en-US")
             if (exercise.spellTarget.isNotBlank() && exercise.type == ExerciseType.SPELLING_AB) {
-                speech.speak("Palabra objetivo: ${exercise.spellTarget}", "es-PE")
+                speakText("Palabra objetivo: ${exercise.spellTarget}", "es-PE")
             }
-            speech.speak("Opción A. ${exercise.optionA}. Opción B. ${exercise.optionB}.", optionLanguage(exercise))
-            if (config.announceControls) speech.speak("Play pausa para A. Siguiente para B. Anterior para repetir.", "es-PE")
+            speakText("Opción A. ${exercise.optionA}. Opción B. ${exercise.optionB}.", optionLanguage(exercise))
+            if (config.announceControls) speakText("Play pausa para A. Siguiente para B. Anterior para repetir.", "es-PE")
             val finishedAt = clock.nowEpochMs()
             currentTurn = currentTurn.copy(promptFinishedAtEpochMs = finishedAt, expectedState = LessonState.WAITING_BINARY)
+            answerAccepted.set(false)
+            recordEvent(
+                eventType = RuntimeEventType.PROMPT_FINISHED,
+                stateBefore = LessonState.SPEAKING.name,
+                stateAfter = LessonState.WAITING_BINARY.name,
+                exerciseId = exercise.id
+            )
             transitionTo(
                 newState = LessonState.WAITING_BINARY,
                 message = "Esperando A o B",
@@ -532,17 +768,31 @@ class LessonRuntime(
     private suspend fun presentSelfAssessment(exercise: ExerciseDefinition) {
         val prompt: suspend () -> Unit = {
             timeoutJob?.cancel()
+            recordEvent(
+                eventType = RuntimeEventType.PROMPT_STARTED,
+                stateBefore = _snapshot.value.state.name,
+                stateAfter = LessonState.SPEAKING.name,
+                exerciseId = exercise.id
+            )
             transitionTo(newState = LessonState.SPEAKING, message = "Recuperación mental")
             earcon.play(EarconKind.NEW_PROMPT)
-            if (exercise.promptEs.isNotBlank()) speech.speak(exercise.promptEs, "es-PE")
-            if (exercise.stimulusEn.isNotBlank()) speech.speak(exercise.stimulusEn, "en-US")
+            delay(90L)
+            if (exercise.promptEs.isNotBlank()) speakText(exercise.promptEs, "es-PE")
+            if (exercise.stimulusEn.isNotBlank()) speakText(exercise.stimulusEn, "en-US")
             if (exercise.spellTarget.isNotBlank()) {
-                speech.speak("Forma mentalmente el deletreo de ${exercise.spellTarget}.", "es-PE")
+                speakText("Forma mentalmente el deletreo de ${exercise.spellTarget}.", "es-PE")
             }
             delay(2200)
-            speech.speak("¿Lo resolviste? Play pausa para sí. Siguiente para dudé. Anterior para no.", "es-PE")
+            speakText("¿Lo resolviste? Play pausa para sí. Siguiente para dudé. Anterior para no.", "es-PE")
             val finishedAt = clock.nowEpochMs()
             currentTurn = currentTurn.copy(promptFinishedAtEpochMs = finishedAt, expectedState = LessonState.WAITING_SELF_ASSESSMENT)
+            answerAccepted.set(false)
+            recordEvent(
+                eventType = RuntimeEventType.PROMPT_FINISHED,
+                stateBefore = LessonState.SPEAKING.name,
+                stateAfter = LessonState.WAITING_SELF_ASSESSMENT.name,
+                exerciseId = exercise.id
+            )
             transitionTo(
                 newState = LessonState.WAITING_SELF_ASSESSMENT,
                 message = "Autoevaluación",
@@ -605,6 +855,12 @@ class LessonRuntime(
         timeoutJob?.cancel()
         speech.stop()
         val snap = _snapshot.value
+        recordEvent(
+            eventType = RuntimeEventType.SESSION_STOPPED,
+            stateBefore = snap.state.name,
+            stateAfter = LessonState.SESSION_END.name,
+            payload = message
+        )
         snap.sessionId?.let { repository.finishSession(it, clock.nowEpochMs()) }
         transitionTo(
             newState = LessonState.SESSION_END,
@@ -612,12 +868,21 @@ class LessonRuntime(
             updateSnapshot = { it.copy(promptFinishedAtMs = null) }
         )
         earcon.play(EarconKind.REGISTERED)
-        speech.speak(message, "es-PE")
+        delay(110L)
+        speakText(message, "es-PE")
     }
 
     private fun fail(t: Throwable) {
         timeoutJob?.cancel()
         speech.stop()
+        scope.launch {
+            recordEvent(
+                eventType = RuntimeEventType.ERROR,
+                stateBefore = _snapshot.value.state.name,
+                stateAfter = LessonState.ERROR.name,
+                payload = t.message ?: t::class.java.simpleName
+            )
+        }
         _snapshot.value = _snapshot.value.copy(state = LessonState.ERROR, message = "Error", error = t.message ?: t::class.java.simpleName)
         earcon.play(EarconKind.WARNING)
     }

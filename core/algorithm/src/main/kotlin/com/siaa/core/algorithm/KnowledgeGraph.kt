@@ -26,26 +26,26 @@ class KnowledgeGraphEngine(
     fun isUnlocked(
         kcId: String,
         states: Map<String, LearnerKcState>,
-        threshold: Double = 0.68,
-        nowEpochMs: Long? = null,
-        useCheckpoints: Boolean = false
+        nowEpochMs: Long = System.currentTimeMillis(),
+        policy: com.siaa.core.model.SessionPolicy = com.siaa.core.model.SessionPolicy()
     ): Boolean {
         val prereqs = incoming[kcId].orEmpty()
         if (prereqs.isEmpty()) return true
         return prereqs.all { edge ->
             if (!edge.hardPrerequisite) return@all true
             val prereqState = states[edge.fromId] ?: return@all false
-            if (useCheckpoints && nowEpochMs != null) {
-                MasteryCheckpointEvaluator.evaluate(prereqState, nowEpochMs).passed
-            } else {
-                prereqState.mastery >= threshold
-            }
+            MasteryCheckpointEvaluator.evaluate(prereqState, nowEpochMs).passed &&
+                prereqState.mastery >= policy.hardPrereqThreshold
         }
     }
 
-
-    fun outerFringe(states: Map<String, LearnerKcState>, masteryThreshold: Double = 0.82): Set<String> = ids
-        .filter { id -> (states[id]?.mastery ?: 0.0) < masteryThreshold && isUnlocked(id, states) }
+    fun outerFringe(
+        states: Map<String, LearnerKcState>,
+        masteryThreshold: Double = 0.82,
+        nowEpochMs: Long = System.currentTimeMillis(),
+        policy: com.siaa.core.model.SessionPolicy = com.siaa.core.model.SessionPolicy()
+    ): Set<String> = ids
+        .filter { id -> (states[id]?.mastery ?: 0.0) < masteryThreshold && isUnlocked(id, states, nowEpochMs, policy) }
         .toSet()
 
     fun unlockValue(kcId: String, states: Map<String, LearnerKcState>): Double {

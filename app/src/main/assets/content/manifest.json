@@ -1,8 +1,16 @@
 {
   "id": "siaa-core-es-en",
   "version": "0.7.0",
+  "schemaVersion": "1.0",
+  "contentVersion": "0.7.0",
   "l1": "es-PE",
   "l2": "en-US",
+  "checksums": {
+    "kcs.json": "ca71be1c3e4e9e30c79baf702a415a70d3a88ca32c770835999f62ef56c27f88",
+    "edges.json": "8e5e0d169468dc87b8461d3caaeb1db32dae0497990dfc260d39768a2057bfb1",
+    "exercises.json": "d82b7111c88f179ce778c1b28f3f2ef31f4dd86f37f6fda7eec0456930ba49e3",
+    "lexemes.json": "7b9acbcbb975b1ce8f04fa2bef21b54304bafde71c6c3269484e19adc206b3c6"
+  },
   "description": "Content pack inicial auditivo/adaptativo. Incluye KCs, prerrequisitos, ejercicios curados y variantes léxicas controladas.",
   "sources": [
     "CEFR Companion Volume 2020",

@@ -50,7 +50,8 @@ data class SessionConfig(
     val announceControls: Boolean = true,
     val feedbackExplanations: Boolean = true,
     val capabilities: SessionCapabilities = SessionCapabilities(),
-    val policy: SessionPolicy = SessionPolicy()
+    val policy: SessionPolicy = SessionPolicy(),
+    val speechRate: Float = 1.0f
 )
 
 data class RuntimeSnapshot(

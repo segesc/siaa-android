@@ -1,5 +1,6 @@
 package com.siaa.core.algorithm
 
+import com.siaa.core.model.InteractionKind
 import com.siaa.core.model.InteractionRecord
 
 data class WheelSpinningSignal(
@@ -11,7 +12,11 @@ data class WheelSpinningSignal(
 
 object WheelSpinningDetector {
     fun detect(kcExerciseIds: Set<String>, interactions: List<InteractionRecord>): WheelSpinningSignal {
-        val xs = interactions.filter { it.exerciseId in kcExerciseIds }.take(10)
+        val xs = interactions.filter {
+            it.exerciseId in kcExerciseIds &&
+            it.graded &&
+            it.kind == InteractionKind.GRADED_RESPONSE
+        }.take(10)
         if (xs.size < 5) return WheelSpinningSignal(false, 0.0, 0.0, "insufficient_evidence")
         val failureRate = xs.count { !it.correct }.toDouble() / xs.size
         val lat = xs.mapNotNull { it.latencyMs }.average().takeIf { !it.isNaN() } ?: 0.0

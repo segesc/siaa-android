@@ -65,9 +65,8 @@ class AdaptiveUtilityPlanner(
             graph.isUnlocked(
                 kcId = kcId,
                 states = states,
-                threshold = policy.hardPrereqThreshold,
                 nowEpochMs = nowEpochMs,
-                useCheckpoints = true
+                policy = policy
             )
         }
     }

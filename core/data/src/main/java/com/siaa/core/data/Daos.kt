@@ -20,6 +20,8 @@ interface ContentDao {
 interface LearnerDao {
     @Query("SELECT * FROM learner_kc_state") suspend fun allStates(): List<LearnerKcStateEntity>
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun upsertState(state: LearnerKcStateEntity)
+    @Query("DELETE FROM learner_kc_state WHERE kcId = :kcId") suspend fun deleteState(kcId: String)
+    @Query("DELETE FROM learner_kc_state WHERE kcId NOT IN (:validKcIds)") suspend fun deleteOrphanStates(validKcIds: List<String>)
     @Query("SELECT * FROM misconceptions") suspend fun allMisconceptions(): List<MisconceptionEntity>
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun upsertMisconception(item: MisconceptionEntity)
 }

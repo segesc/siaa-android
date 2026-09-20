@@ -150,7 +150,7 @@ data class SessionCapabilities(
 
     fun canPresent(type: ExerciseType): Boolean = when (type) {
         ExerciseType.TEACH -> true
-        ExerciseType.SELF_ASSESS -> supportsThreeWay
+        ExerciseType.SELF_ASSESS, ExerciseType.SPELL_FROM_AUDIO -> supportsThreeWay
         else -> supportsBinary
     }
 }

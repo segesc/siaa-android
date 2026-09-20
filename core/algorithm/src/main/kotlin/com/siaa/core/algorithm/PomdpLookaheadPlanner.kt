@@ -11,7 +11,8 @@ import com.siaa.core.model.*
 class PomdpLookaheadPlanner(
     private val base: ExercisePlanner = AdaptiveUtilityPlanner(),
     private val gamma: Double = 0.55,
-    private val branchWidth: Int = 6
+    private val branchWidth: Int = 6,
+    private val diagnostic: QMatrixDiagnostic = QMatrixDiagnostic()
 ) : ExercisePlanner {
     override fun rank(
         mode: SessionMode,
@@ -32,14 +33,20 @@ class PomdpLookaheadPlanner(
         val immediate = base.rank(mode, snapshot, recentInteractions, nowEpochMs, branchWidth, capabilities)
         return immediate.map { candidate ->
             val exercise = candidate.exercise
-            val kcId = exercise.kcIds.firstOrNull() ?: return@map candidate
-            val prior = snapshot.stateByKcId[kcId] ?: LearnerKcState(kcId)
+            if (exercise.kcIds.isEmpty()) return@map candidate
+            val qWeights = diagnostic.diagnosticWeights(exercise, snapshot.stateByKcId)
             val params = BktParams()
             val pCorrect = candidate.successProbability
-            val masteredIfCorrect = BktUpdater.posterior(prior.mastery, true, params)
-            val masteredIfWrong = BktUpdater.posterior(prior.mastery, false, params)
-            val expectedMastery = pCorrect * masteredIfCorrect + (1.0 - pCorrect) * masteredIfWrong
-            val futureGain = (expectedMastery - prior.mastery).coerceAtLeast(-0.15)
+
+            val futureGain = exercise.kcIds.sumOf { kcId ->
+                val weight = qWeights[kcId] ?: (1.0 / exercise.kcIds.size)
+                val prior = snapshot.stateByKcId[kcId] ?: LearnerKcState(kcId)
+                val masteredIfCorrect = BktUpdater.posterior(prior.mastery, true, params)
+                val masteredIfWrong = BktUpdater.posterior(prior.mastery, false, params)
+                val expectedMastery = pCorrect * masteredIfCorrect + (1.0 - pCorrect) * masteredIfWrong
+                val kcGain = (expectedMastery - prior.mastery).coerceAtLeast(-0.15)
+                weight * kcGain
+            }
             candidate.copy(
                 utility = candidate.utility + gamma * futureGain,
                 rationale = candidate.rationale + ", lookaheadGain=${"%.3f".format(java.util.Locale.US, futureGain)}"

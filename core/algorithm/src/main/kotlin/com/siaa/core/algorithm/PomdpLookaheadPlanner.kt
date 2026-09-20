@@ -19,8 +19,17 @@ class PomdpLookaheadPlanner(
         recentInteractions: List<InteractionRecord>,
         nowEpochMs: Long,
         limit: Int
+    ): List<PlannerCandidate> = rank(mode, snapshot, recentInteractions, nowEpochMs, limit, SessionCapabilities())
+
+    override fun rank(
+        mode: SessionMode,
+        snapshot: LearningSnapshot,
+        recentInteractions: List<InteractionRecord>,
+        nowEpochMs: Long,
+        limit: Int,
+        capabilities: SessionCapabilities
     ): List<PlannerCandidate> {
-        val immediate = base.rank(mode, snapshot, recentInteractions, nowEpochMs, branchWidth)
+        val immediate = base.rank(mode, snapshot, recentInteractions, nowEpochMs, branchWidth, capabilities)
         return immediate.map { candidate ->
             val exercise = candidate.exercise
             val kcId = exercise.kcIds.firstOrNull() ?: return@map candidate

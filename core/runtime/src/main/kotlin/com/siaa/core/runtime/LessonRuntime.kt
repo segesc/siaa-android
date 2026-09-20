@@ -419,7 +419,7 @@ class LessonRuntime(
         val now = clock.nowEpochMs()
         val learning = repository.loadSnapshot()
         val recent = repository.recentInteractions(80)
-        val candidate = planner.choose(config.mode, learning, recent, now)
+        val candidate = planner.choose(config.mode, learning, recent, now, config.capabilities)
         if (candidate == null) {
             finishSession("No quedan actividades elegibles")
             return

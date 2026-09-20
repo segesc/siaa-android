@@ -17,7 +17,7 @@ class AdaptiveUtilityPlanner(
         limit: Int
     ): List<PlannerCandidate> = rank(mode, snapshot, recentInteractions, nowEpochMs, limit, SessionCapabilities())
 
-    fun rank(
+    override fun rank(
         mode: SessionMode,
         snapshot: LearningSnapshot,
         recentInteractions: List<InteractionRecord>,

@@ -13,13 +13,15 @@ data class SessionPolicy(
     val transferFraction: Double = 0.25,
     val binaryResponseTimeoutMs: Long = 12_000L,
     val selfAssessmentTimeoutMs: Long = 10_000L,
-    val maxTimeoutRetries: Int = 2
+    val maxTimeoutRetries: Int = 2,
+    val cefrCoverageThreshold: Double = 0.70
 ) {
     init {
         require(targetRecall in 0.0..1.0)
         require(masteryThreshold in 0.0..1.0)
         require(hardPrereqThreshold in 0.0..1.0)
         require(readinessThreshold in 0.0..1.0)
+        require(cefrCoverageThreshold in 0.0..1.0)
         require(maxHelpDepth >= 0)
         require(newContentFraction >= 0 && reviewFraction >= 0 && transferFraction >= 0)
         require(abs(newContentFraction + reviewFraction + transferFraction - 1.0) < 1e-6) {

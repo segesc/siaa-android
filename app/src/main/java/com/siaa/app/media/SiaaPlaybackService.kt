@@ -20,6 +20,7 @@ import androidx.media3.session.MediaSessionService
 import com.siaa.app.SiaaApplication
 import com.siaa.core.audio.AudioOutputGuard
 import com.siaa.core.audio.AudioFocusController
+import com.siaa.core.model.SessionCapabilities
 import com.siaa.core.model.SessionMode
 import com.siaa.core.runtime.RuntimeCommand
 import com.siaa.core.runtime.SessionConfig
@@ -98,11 +99,20 @@ class SiaaPlaybackService : MediaSessionService() {
                     activateMediaAnchor()
                     serviceScope.launch {
                         appGraph.contentReady.first { it }
+                        val latestProfile = appGraph.repository.latestDeviceProfile()
+                        val capabilities = if (latestProfile != null) {
+                            SessionCapabilities(
+                                hasPrimary = latestProfile.playPauseAvailable,
+                                hasSecondary = latestProfile.nextAvailable,
+                                hasBack = latestProfile.previousAvailable
+                            )
+                        } else SessionCapabilities()
                         runtime.start(SessionConfig(
                             mode = mode,
                             maxItems = maxItems,
                             announceControls = announceControls,
-                            feedbackExplanations = feedbackExplanations
+                            feedbackExplanations = feedbackExplanations,
+                            capabilities = capabilities
                         ))
                     }
                 } else appGraph.mediaDiagnostics.record("AudioFocus no concedido")
